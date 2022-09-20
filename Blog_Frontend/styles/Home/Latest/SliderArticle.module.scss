@@ -1,0 +1,29 @@
+@import "./../../Shared.scss";
+
+.home-latest-article {
+  height: 100%;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+  }
+  h2 {
+    padding-top: 1rem;
+    font-size: clamp(1.25rem, 1.5vw, 1.5vw);
+    line-height: 150%;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .home-latest-article {
+    padding-bottom: 1rem;
+
+    img {
+      height: 85%;
+    }
+  }
+}

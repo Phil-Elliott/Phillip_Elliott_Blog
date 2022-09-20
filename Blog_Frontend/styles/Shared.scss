@@ -1,0 +1,83 @@
+// Variables
+//==================================================
+
+// Colors
+$primary: white;
+$secondary: black;
+$tertiary: #d91e18;
+$light-color: #555555;
+
+// Width
+$width: 80%;
+
+// Transition
+$transistion-ease: all 0.5s ease-in-out;
+
+// Grid-gap
+$grid-gap: 10%;
+
+// other stuff
+// $box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+// $box-shadow-light: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+// $grid-gap: 1rem;
+// $content-padding: 1.25rem;
+
+//================================================
+// Placeholders
+//================================================
+%flex-align {
+  display: flex;
+  align-items: center;
+}
+
+%flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+%flex-between-column {
+  @extend %flex-between;
+  flex-direction: column;
+}
+
+%flex-center {
+  @extend %flex-between;
+  justify-content: center;
+}
+
+%center {
+  @extend %flex-align;
+  justify-content: center;
+}
+
+%flex-column {
+  @extend %flex-align;
+  flex-direction: column;
+}
+
+%flex-column-justify {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+%flex-column-center {
+  @extend %flex-column;
+  justify-content: center;
+}
+
+%main-width {
+  width: $width;
+  margin: 0 auto;
+}
+
+%grid-two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $grid-gap;
+}
+
+//================================================
+// Mixin
+//================================================

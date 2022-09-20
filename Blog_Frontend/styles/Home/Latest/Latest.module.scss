@@ -1,0 +1,56 @@
+@import "./../../Shared.scss";
+
+.home-section-header {
+  color: $tertiary;
+  padding-bottom: 2%;
+  font-size: clamp(1.25rem, 1.75vw, 1.75vw);
+  align-self: flex-start;
+}
+
+.home-latest-container {
+  padding-block: 2rem;
+  background-color: rgba(246, 246, 246);
+
+  h1 {
+    @extend %main-width;
+  }
+}
+
+.home-latest-slider-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-latest-slider-articles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3%;
+  // margin-inline: 1rem;
+  @extend %main-width;
+}
+
+.slider-chevron {
+  cursor: pointer;
+  font-size: 1.5rem;
+  opacity: 0.7;
+  margin-inline: 3.5rem;
+  margin-bottom: 6rem;
+}
+
+.slider-chevron-hide {
+  color: white;
+}
+
+@media only screen and (max-width: 1000px) {
+  .home-latest-container {
+    h1 {
+      width: 90%;
+    }
+  }
+  .home-latest-slider-articles {
+    padding-top: 1rem;
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+}

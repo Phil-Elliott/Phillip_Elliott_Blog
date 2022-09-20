@@ -1,0 +1,58 @@
+@import "./../Shared.scss";
+
+.headerContentContainer {
+  // padding-block: 0.5rem;
+  background-color: $primary;
+  border-bottom: solid 1px #d3d3d3;
+  position: relative;
+}
+
+.headerTopContentContainer {
+  color: $secondary;
+  @extend %main-width;
+  @extend %flex-between;
+}
+
+.headerBottomContentContainer {
+  border-bottom: solid 1px #d3d3d3;
+  transition: $transistion-ease;
+}
+
+.headerBottomContentContainerClosed {
+  // margin-top: -2.75rem;
+  margin-top: -4.25rem;
+  transition: $transistion-ease;
+}
+
+.headerResponsiveLinksContainer {
+  @extend %main-width;
+  padding-block: 0.5rem;
+
+  li {
+    margin: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .headerFullSizeNav {
+    display: none;
+  }
+  .headerTopContentContainer {
+    width: 90%;
+  }
+  .headerResponsiveLinksContainer {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 1001px) {
+  .headerBottomContentContainer {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 1001px) {
+  .hamburgerIcon {
+    display: none;
+  }
+}
