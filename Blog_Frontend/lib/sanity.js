@@ -5,7 +5,7 @@ import {
 import createImageUrlBuilder from "@sanity/image-url";
 import { config } from "./config";
 
-export const urlfor = (source) => createImageUrlBuilder(config).image(source);
+export const urlFor = (source) => createImageUrlBuilder(config).image(source);
 
 export const usePreviewSubscription = createPreviewSubscriptionHook(config);
 

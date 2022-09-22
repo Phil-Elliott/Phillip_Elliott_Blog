@@ -1,6 +1,7 @@
 import React from "react";
 // import { Link } from "react-router-dom";
 import Link from "next/link";
+import { urlFor } from "../../../lib/sanity";
 import styles from "./../../../styles/Home/Featured.module.scss";
 
 const featuredArticle = {
@@ -11,7 +12,8 @@ const featuredArticle = {
     "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
 };
 
-const Featured = () => {
+const Featured = (post) => {
+  console.log(post);
   return (
     <section className={styles["home-featured-container"]}>
       <h1
@@ -22,7 +24,7 @@ const Featured = () => {
       <Link href="/article" className={styles["link"]}>
         <div className={styles["home-featured-article-container"]}>
           <div className={styles["home-featured-left-container"]}>
-            <h2>{featuredArticle.title}</h2>
+            <h2>{post.post.title}</h2>
             <p>{featuredArticle.description}</p>
             <div>
               <button type="button" name="Read Article Button">
@@ -32,7 +34,7 @@ const Featured = () => {
           </div>
           <img
             className={styles["home-featured-image"]}
-            src={featuredArticle.image}
+            src={urlFor(post.post.mainImage)}
             alt="Coffee"
           />
         </div>

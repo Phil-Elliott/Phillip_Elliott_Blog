@@ -8,12 +8,10 @@ import { getClient } from "../lib/sanity.server";
 import groq from "groq";
 
 const Home = ({ posts }) => {
-  console.log(posts);
-
   return (
     <div className={styles["home-container"]}>
       <Meta title="Home" />
-      <Featured />
+      <Featured post={posts[0]} />
       <Latest />
       <Popular />
     </div>
@@ -22,7 +20,7 @@ const Home = ({ posts }) => {
 
 export async function getStaticProps({ preview = false }) {
   const posts = await getClient(preview).fetch(groq`
-    *[_type == "post" && publishedAt < now()] | order(publishedAt desc) {
+    *[_type == "post" ] | order(publishedAt desc) {
       _id,
       title,
       "username": author->username,
