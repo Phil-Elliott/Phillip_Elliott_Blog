@@ -4,17 +4,10 @@ import Popular from "../components/Home/Popular/Popular";
 import { Meta } from "../components/Meta";
 import Image from "next/image";
 import styles from "./../styles/Home/Home.module.scss";
-import { createClient } from "next-sanity";
+import { getClient } from "../lib/sanity.server";
 import groq from "groq";
 
-const client = createClient({
-  projectId: "wh0nr5m7",
-  dataset: "production",
-  apiVersion: "2022-08-10",
-  useCdn: false,
-});
-
-export default function Home({ posts }) {
+const Home = ({ posts }) => {
   console.log(posts);
 
   return (
@@ -25,16 +18,43 @@ export default function Home({ posts }) {
       <Popular />
     </div>
   );
-}
+};
 
 export async function getStaticProps({ preview = false }) {
-  const posts = await client.fetch(`*[_type == "post"]`);
+  const posts = await getClient(preview).fetch(groq`
+    *[_type == "post" && publishedAt < now()] | order(publishedAt desc) {
+      _id,
+      title,
+      "username": author->username,
+      // "categories": categories[]->{id, title}
+      "authorImage": author->avatar,
+      body,
+      mainImage, 
+      slug, 
+      publishedAt,
+      categories
+    }
+    
+    
+    
+    `);
   return {
     props: {
       posts,
     },
   };
 }
+
+// export async function getStaticProps({ preview = false }) {
+//   const posts = await getClient(preview).fetch(`*[_type == "post"]`);
+//   return {
+//     props: {
+//       posts,
+//     },
+//   };
+// }
+
+export default Home;
 
 // Connect the sanity io database
 // Add article options to Article page
@@ -44,3 +64,12 @@ export async function getStaticProps({ preview = false }) {
 
 // Start writing articles while fixing up website
 // Figure out subscribe and what to send people (could do this later)
+
+// const client = createClient({
+//   projectId: "wh0nr5m7",
+//   dataset: "production",
+//   apiVersion: "2022-08-10",
+//   useCdn: false,
+// });
+
+// import { createClient } from "next-sanity";
