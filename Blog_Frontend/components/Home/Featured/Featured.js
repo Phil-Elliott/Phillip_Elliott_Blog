@@ -20,7 +20,12 @@ const Featured = (post) => {
       >
         Featured
       </h1>
-      <Link href="/article" className={styles["link"]}>
+      <Link
+        key={post.post.id}
+        href="/posts/[slug]"
+        as={`/posts/${post.post.slug.current}`}
+        className={styles["link"]}
+      >
         <div className={styles["home-featured-article-container"]}>
           <div className={styles["home-featured-left-container"]}>
             <h2>{post.post.title}</h2>

@@ -21,58 +21,27 @@ const featuredArticles = [
   },
 ];
 
-export const Latest = () => {
-  // const [currentArticle, setCurrentArticle] = useState(0)
-
-  // const slideLeft = () => {
-  //   if (currentArticle > 0) {
-  //     setCurrentArticle((prevArticle) => prevArticle - 1)
-  //   }
-  // }
-
-  // const slideRight = () => {
-  //   if (currentArticle < 2) {
-  //     setCurrentArticle((prevArticle) => prevArticle + 1)
-  //   }
-  // }
+export const Latest = (posts) => {
+  console.log(posts);
 
   return (
     <section className={styles["home-latest-container"]}>
       <h1 className={styles["home-section-header"]}>Latest</h1>
       <div className={styles["home-latest-slider-container"]}>
-        {/* <FaChevronLeft
-          className={
-            currentArticle > 0
-              ? "slider-chevron"
-              : "slider-chevron slider-chevron-hide"
-          }
-          onClick={() => slideLeft()}
-        /> */}
-
         <div className={styles["home-latest-slider-articles"]}>
-          {featuredArticles.map((article, index) => {
-            // let min = currentArticle * 3
-            // let max = min + 3
-            // if (index >= min && index < max) {
-            return (
-              <SliderArticle
-                key={index}
-                title={article.title}
-                image={article.image}
-              />
-            );
-            // }
+          {posts.posts.map((post, index) => {
+            if (index > 0 && index < 4) {
+              return (
+                <SliderArticle
+                  key={index}
+                  title={post.title}
+                  image={post.mainImage}
+                  slug={post.slug}
+                />
+              );
+            }
           })}
         </div>
-
-        {/* <FaChevronRight
-          className={
-            currentArticle < 2
-              ? "slider-chevron"
-              : "slider-chevron slider-chevron-hide"
-          }
-          onClick={() => slideRight()}
-        /> */}
       </div>
     </section>
   );
@@ -89,3 +58,42 @@ export const Latest = () => {
   use two maps
   use npm for slider
 */
+// const [currentArticle, setCurrentArticle] = useState(0)
+
+// const slideLeft = () => {
+//   if (currentArticle > 0) {
+//     setCurrentArticle((prevArticle) => prevArticle - 1)
+//   }
+// }
+
+// const slideRight = () => {
+//   if (currentArticle < 2) {
+//     setCurrentArticle((prevArticle) => prevArticle + 1)
+//   }
+// }
+{
+  /* <FaChevronLeft
+          className={
+            currentArticle > 0
+              ? "slider-chevron"
+              : "slider-chevron slider-chevron-hide"
+          }
+          onClick={() => slideLeft()}
+        /> */
+}
+
+// let min = currentArticle * 3
+// let max = min + 3
+// if (index >= min && index < max) {
+// }
+
+{
+  /* <FaChevronRight
+          className={
+            currentArticle < 2
+              ? "slider-chevron"
+              : "slider-chevron slider-chevron-hide"
+          }
+          onClick={() => slideRight()}
+        /> */
+}

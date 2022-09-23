@@ -12,8 +12,8 @@ const Home = ({ posts }) => {
     <div className={styles["home-container"]}>
       <Meta title="Home" />
       <Featured post={posts[0]} />
-      <Latest />
-      <Popular />
+      <Latest posts={posts} />
+      <Popular posts={posts} />
     </div>
   );
 };
