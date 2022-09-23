@@ -3,24 +3,6 @@ import SliderArticle from "./Slider-Article/Slider-Article";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import styles from "./../../../styles/Home/Latest/Latest.module.scss";
 
-const featuredArticles = [
-  {
-    title: "Start your day with the right cup of coffee",
-    image:
-      "https://cdn.pixabay.com/photo/2020/01/22/18/23/istanbul-4785964_960_720.jpg",
-  },
-  {
-    title: "Start your day with the right cup of coffee",
-    image:
-      "https://cdn.pixabay.com/photo/2016/11/21/12/10/tv-1844964_960_720.jpg",
-  },
-  {
-    title: "Start your day with the right cup of coffee",
-    image:
-      "https://cdn.pixabay.com/photo/2016/04/30/08/35/aircraft-1362586_960_720.jpg",
-  },
-];
-
 export const Latest = (posts) => {
   console.log(posts);
 

@@ -41,19 +41,20 @@ const featuredArticles = [
   },
 ];
 
-const Popular = () => {
+const Popular = (posts) => {
   return (
     <section className={styles["home-popular-container"]}>
       <h1 className={styles["home-section-header"]}>Popular</h1>
       <div className={styles["home-popular-articles-container"]}>
-        {featuredArticles.map((article, index) => {
+        {posts.posts.map((post, index) => {
           return (
             <ArticleContainer
               key={index}
               index={index}
-              title={article.title}
-              description={article.description}
-              image={article.image}
+              title={post.title}
+              description="blah"
+              image={post.mainImage}
+              slug={post.slug}
             />
           );
         })}

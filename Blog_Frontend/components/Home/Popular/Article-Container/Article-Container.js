@@ -1,10 +1,22 @@
 import React from "react";
 import Link from "next/link";
+import { urlFor } from "../../../../lib/sanity";
 import styles from "./../../../../styles/Home/Popular/ArticleContainer.module.scss";
 
-const ArticleContainer = ({ title, description, image, index, noBorder }) => {
+const ArticleContainer = ({
+  title,
+  description,
+  image,
+  index,
+  noBorder,
+  slug,
+}) => {
   return (
-    <Link href="/article" className={styles.link}>
+    <Link
+      href="/posts/[slug]"
+      as={`/posts/${slug.current}`}
+      className={styles.link}
+    >
       <div className={styles["home-popular-article-container"]}>
         <div
           style={index % 2 !== 0 ? { order: "1" } : { order: "0" }}
@@ -20,7 +32,7 @@ const ArticleContainer = ({ title, description, image, index, noBorder }) => {
         <div className={styles["home-popular-article-container-right"]}>
           <img
             className={styles["home-featured-image"]}
-            src={image}
+            src={urlFor(image)}
             alt="Coffee"
           />
         </div>
