@@ -13,7 +13,6 @@ const featuredArticle = {
 };
 
 const Featured = (post) => {
-  console.log(post);
   return (
     <section className={styles["home-featured-container"]}>
       <h1
