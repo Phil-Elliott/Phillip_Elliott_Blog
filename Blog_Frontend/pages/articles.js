@@ -1,6 +1,8 @@
 import React from "react";
 import ArticleContainer from "../components/Home/Popular/Article-Container/Article-Container";
 import { Meta } from "../components/Meta";
+import { getClient } from "../lib/sanity.server";
+import groq from "groq";
 import styles from "./../styles/Articles.module.scss";
 
 const featuredArticles = [
@@ -76,19 +78,21 @@ const featuredArticles = [
   },
 ];
 
-const ArticlesContainer = () => {
+const ArticlesContainer = (posts) => {
+  console.log(posts);
   return (
     <div className={styles["main-articles-container"]}>
       <Meta title="Articles" />
       <div className={styles["home-popular-articles-container"]}>
-        {featuredArticles.map((article, index) => {
+        {posts.posts.map((post, index) => {
           return (
             <ArticleContainer
               key={index}
               index={index}
-              title={article.title}
-              description={article.description}
-              image={article.image}
+              title={post.title}
+              description="blah"
+              image={post.mainImage}
+              slug={post.slug}
               noBorder={true}
             />
           );
@@ -97,6 +101,28 @@ const ArticlesContainer = () => {
     </div>
   );
 };
+
+export async function getStaticProps({ preview = false }) {
+  const posts = await getClient(preview).fetch(groq`
+    *[_type == "post" ] | order(publishedAt desc) {
+      _id,
+      title,
+      "username": author->username,
+      // "categories": categories[]->{id, title}
+      "authorImage": author->avatar,
+      body,
+      mainImage, 
+      slug, 
+      publishedAt,
+      categories
+    }
+    `);
+  return {
+    props: {
+      posts,
+    },
+  };
+}
 
 export default ArticlesContainer;
 

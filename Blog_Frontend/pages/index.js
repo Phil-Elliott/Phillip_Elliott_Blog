@@ -32,9 +32,6 @@ export async function getStaticProps({ preview = false }) {
       publishedAt,
       categories
     }
-    
-    
-    
     `);
   return {
     props: {
@@ -43,31 +40,4 @@ export async function getStaticProps({ preview = false }) {
   };
 }
 
-// export async function getStaticProps({ preview = false }) {
-//   const posts = await getClient(preview).fetch(`*[_type == "post"]`);
-//   return {
-//     props: {
-//       posts,
-//     },
-//   };
-// }
-
 export default Home;
-
-// Connect the sanity io database
-// Add article options to Article page
-// Get and add a logo
-// Add other pages for bottom links
-// Finish rest of TM video and Finish small details
-
-// Start writing articles while fixing up website
-// Figure out subscribe and what to send people (could do this later)
-
-// const client = createClient({
-//   projectId: "wh0nr5m7",
-//   dataset: "production",
-//   apiVersion: "2022-08-10",
-//   useCdn: false,
-// });
-
-// import { createClient } from "next-sanity";
