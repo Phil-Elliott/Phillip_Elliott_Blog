@@ -79,7 +79,6 @@ const featuredArticles = [
 ];
 
 const ArticlesContainer = (posts) => {
-  console.log(posts);
   return (
     <div className={styles["main-articles-container"]}>
       <Meta title="Articles" />
@@ -90,7 +89,7 @@ const ArticlesContainer = (posts) => {
               key={index}
               index={index}
               title={post.title}
-              description="blah"
+              description={post.body}
               image={post.mainImage}
               slug={post.slug}
               noBorder={true}

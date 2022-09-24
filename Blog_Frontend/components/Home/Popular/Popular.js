@@ -47,16 +47,18 @@ const Popular = (posts) => {
       <h1 className={styles["home-section-header"]}>Popular</h1>
       <div className={styles["home-popular-articles-container"]}>
         {posts.posts.map((post, index) => {
-          return (
-            <ArticleContainer
-              key={index}
-              index={index}
-              title={post.title}
-              description="blah"
-              image={post.mainImage}
-              slug={post.slug}
-            />
-          );
+          if (index > 3) {
+            return (
+              <ArticleContainer
+                key={index}
+                index={index}
+                title={post.title}
+                description={post.body}
+                image={post.mainImage}
+                slug={post.slug}
+              />
+            );
+          }
         })}
       </div>
     </section>

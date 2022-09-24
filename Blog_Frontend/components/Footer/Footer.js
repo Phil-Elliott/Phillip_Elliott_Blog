@@ -28,7 +28,7 @@ const NavLinks = [
 const Footer = () => {
   return (
     <footer className={styles["footer-container"]}>
-      <h1>Travel Wisely</h1>
+      <h1>Phillip Elliott Blog</h1>
       <nav>
         <ul>
           {NavLinks.map((link) => {
@@ -40,7 +40,7 @@ const Footer = () => {
           })}
         </ul>
       </nav>
-      <p>Copyright © Travel Wisely. All Rights Reserved.</p>
+      <p>Copyright © Phillip Elliott Blog. All Rights Reserved.</p>
     </footer>
   );
 };
