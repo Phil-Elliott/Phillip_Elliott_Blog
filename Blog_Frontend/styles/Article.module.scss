@@ -5,8 +5,8 @@
   width: 50%;
   @extend %flex-column;
   min-height: 70vh;
-  padding-top: clamp(3rem, 5%, 5%);
-  padding-bottom: clamp(3rem, 5%, 5%);
+  padding-top: clamp(2rem, 1%, 2%);
+  padding-bottom: clamp(2rem, 1%, 2%);
 
   h1 {
     color: black;
@@ -20,7 +20,7 @@
     font-weight: 400;
     padding-bottom: 2.5%;
   }
-  img {
+  .main-img {
     width: 100%;
     height: auto;
     padding-block: 2.5%;
@@ -32,6 +32,10 @@
       line-height: 170%;
     }
   }
+}
+
+.post-image {
+  // width: 50%;
 }
 
 @media only screen and (max-width: 1000px) {

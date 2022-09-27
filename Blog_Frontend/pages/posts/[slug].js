@@ -9,7 +9,7 @@ const PostComponents = {
     image: ({ value }) => {
       return (
         <img
-          className={styles[post - image]}
+          className={styles["post-image"]}
           alt={value.alt || " "}
           src={urlFor(value)}
         />
@@ -27,7 +27,7 @@ const Post = ({ post }) => {
         <article>
           <h1>{title}</h1>
           <p>Last Updated: {publishedAt}</p>
-          <img src={urlFor(mainImage)} alt="" />
+          <img className={styles["main-img"]} src={urlFor(mainImage)} alt="" />
           <div className={styles["article-content"]}>
             <PortableText value={body} components={PostComponents} />
           </div>
