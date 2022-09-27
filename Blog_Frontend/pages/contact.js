@@ -10,25 +10,26 @@ const Contact = () => {
         <h1>Contact Us</h1>
         <h2>Reaching Out</h2>
         <p>
-          We are a relatively new blog and we hope our users can reach out with
-          any suggestion. We will be adding more features and improving the user
-          experience as we go. Send us a message through our email
-          <a href="#"> blahblahbla@gmail.com</a>. It will be great to hear from
-          you.
+          Thanks for taking the time to check out my blog. I hope you're finding
+          it useful so far. I'm always looking for ways to improve, so if you
+          have any suggestions, please don't hesitate to get in touch. You can
+          reach me by email at <a href="#"> blahblahbla@gmail.com</a>.
         </p>
         <h2>Advertising</h2>
         <p>
-          Our main focus at this time will be creating valuable content for our
-          users. We would still love to hear about your business or product and
-          the possibility of us creating a partnership. Send us a message
-          through our email at <a href="#"> blahblahbla@gmail.com</a> and put
-          advertising in the subject line.
+          If you're interested in advertising on my site, I'd love to hear from
+          you. Send me an email at <a href="#"> blahblahbla@gmail.com</a> with
+          "Advertising" in the subject line, and tell me a little bit about your
+          business or product. I'm always looking for new partnerships that can
+          provide value for my users.
         </p>
         <h2>Coming Soon</h2>
         <p>
-          We have many plans for the future of this blog. We will soon start
-          sending weekly newsletters to our subscribed users. We will also be
-          bringing our content to some or the social media platforms.
+          The future of this blog is very exciting. I have many plans for it,
+          including sending weekly newsletters to my subscribed users and
+          bringing my content to social media platforms. This will help me reach
+          a wider audience and continue providing interesting and valuable
+          content. Thank you for reading and supporting this blog!
         </p>
       </div>
     </div>
