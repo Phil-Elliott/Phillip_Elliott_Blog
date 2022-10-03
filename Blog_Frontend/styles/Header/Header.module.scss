@@ -5,7 +5,13 @@
   background-color: $primary;
   border-bottom: solid 1px #d3d3d3;
   position: relative;
+  // position: fixed;
+  width: 100%;
 }
+
+// .hiddenHeader {
+//   translate: translateY(-100px);
+// }
 
 .headerTopContentContainer {
   color: $secondary;

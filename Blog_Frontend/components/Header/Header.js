@@ -6,7 +6,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className={styles.headerContainer}>
+    <header className={`${styles.headerContainer} ${styles.hiddenHeader}`}>
       <div className={styles.headerContentContainer}>
         <div className={styles.headerTopContentContainer}>
           <div className={styles.hamburgerIcon}>
@@ -35,3 +35,5 @@ const Header = () => {
 };
 
 export default Header;
+
+// Will need to fix responsive header - gets messed up with fixed header
