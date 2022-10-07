@@ -37,3 +37,4 @@ const Header = () => {
 export default Header;
 
 // Will need to fix responsive header - gets messed up with fixed header
+// Probably used a negative margin for space reasons

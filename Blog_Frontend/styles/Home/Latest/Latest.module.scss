@@ -1,15 +1,17 @@
 @import "./../../Shared.scss";
 
 .home-section-header {
-  color: $tertiary;
+  // color: $tertiary;
   padding-bottom: 2%;
   font-size: clamp(1.25rem, 1.75vw, 1.75vw);
+  // font-weight: 900;
   align-self: flex-start;
 }
 
 .home-latest-container {
   padding-block: 2rem;
-  background-color: rgba(246, 246, 246);
+  background-color: $secondary;
+  color: $primary;
   // background-color: #4e4e50;
 
   h1 {

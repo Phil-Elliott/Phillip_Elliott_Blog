@@ -19,17 +19,23 @@ const PostComponents = {
 };
 
 const Post = ({ post }) => {
-  const { title, body, mainImage, publishedAt } = post;
+  // const { body, mainImage, publishedAt } = post;
+
+  // console.log({ post.title });
 
   return (
     <div className={styles["article-container"]}>
       {post && (
         <article>
-          <h1>{title}</h1>
-          <p>Last Updated: {publishedAt}</p>
-          <img className={styles["main-img"]} src={urlFor(mainImage)} alt="" />
+          <h1>{post.title}</h1>
+          <p>Last Updated: {post.publishedAt}</p>
+          <img
+            className={styles["main-img"]}
+            src={urlFor(post.mainImage)}
+            alt=""
+          />
           <div className={styles["article-content"]}>
-            <PortableText value={body} components={PostComponents} />
+            <PortableText value={post.body} components={PostComponents} />
           </div>
         </article>
       )}

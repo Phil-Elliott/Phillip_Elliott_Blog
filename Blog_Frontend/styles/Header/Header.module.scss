@@ -2,8 +2,8 @@
 
 .headerContentContainer {
   // padding-block: 0.5rem;
-  background-color: $primary;
-  border-bottom: solid 1px #d3d3d3;
+  background-color: $tertiary;
+  // border-bottom: solid 1px $border-color;
   position: relative;
   // position: fixed;
   width: 100%;
@@ -14,7 +14,7 @@
 // }
 
 .headerTopContentContainer {
-  color: $secondary;
+  color: $primary;
   @extend %main-width;
   @extend %flex-between;
 }
