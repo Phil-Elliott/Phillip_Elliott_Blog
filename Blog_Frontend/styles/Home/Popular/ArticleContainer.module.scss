@@ -2,17 +2,16 @@
 
 .home-popular-article-container {
   // background-color: $tertiary;
-  border: 1px solid $border-color;
-  border-radius: 0.5rem;
+  // border: 1px solid $border-color;
+  border-radius: 3px;
   @extend %grid-two-columns;
   gap: 0;
   margin-bottom: 3%;
   height: 100%;
+  box-shadow: $box-shadow;
 }
 
 .home-popular-article-container-left {
-  border-top: 1px solid $border-color;
-  // border-left: 1px solid $border-color;
   display: flex;
   flex-direction: column;
 
