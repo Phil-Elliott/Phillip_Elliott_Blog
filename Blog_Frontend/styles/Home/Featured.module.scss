@@ -7,6 +7,7 @@
 }
 
 .home-featured-article-container {
+  cursor: pointer;
   @extend %grid-two-columns;
 }
 
@@ -24,6 +25,7 @@
     font-size: clamp(1.5rem, 2.25vw, 2.25vw);
     line-height: 150%;
     padding-bottom: 1.5rem;
+    margin: 0;
   }
   p {
     color: $light-color;
@@ -51,7 +53,7 @@
 
 .home-featured-image {
   width: 100%;
-  height: 100%;
+  height: 50vh;
   object-fit: cover;
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);

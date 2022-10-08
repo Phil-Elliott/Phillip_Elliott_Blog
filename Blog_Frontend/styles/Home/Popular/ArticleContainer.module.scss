@@ -3,7 +3,8 @@
 .home-popular-article-container {
   // background-color: $tertiary;
   // border: 1px solid $border-color;
-  border-radius: 3px;
+  // border-radius: 30px;
+  cursor: pointer;
   @extend %grid-two-columns;
   gap: 0;
   margin-bottom: 3%;
@@ -38,6 +39,7 @@
 }
 
 .home-popular-article-container-right {
+  height: 30rem;
   img {
     height: 100%;
     width: 100%;
