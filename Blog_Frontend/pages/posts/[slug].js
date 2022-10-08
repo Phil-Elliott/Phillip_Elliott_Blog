@@ -2,6 +2,7 @@ import groq from "groq";
 import { PortableText } from "@portabletext/react";
 import { urlFor } from "../../lib/sanity";
 import { getClient } from "../../lib/sanity.server";
+import Moment from "react-moment";
 import styles from "./../../styles/Article.module.scss";
 
 const PostComponents = {
@@ -19,16 +20,15 @@ const PostComponents = {
 };
 
 const Post = ({ post }) => {
-  // const { body, mainImage, publishedAt } = post;
-
-  // console.log({ post.title });
-
   return (
     <div className={styles["article-container"]}>
       {post && (
         <article>
           <h1>{post.title}</h1>
-          <p>Last Updated: {post.publishedAt}</p>
+          <h3>
+            Phil Elliott |{" "}
+            <Moment format="MM/DD/YYYY">{post.publishedAt}</Moment>
+          </h3>
           <img
             className={styles["main-img"]}
             src={urlFor(post.mainImage)}

@@ -10,27 +10,37 @@
 
   h1 {
     color: black;
-    font-size: clamp(1.5rem, 3vw, 3vw);
+    font-size: clamp(1.5rem, 2.75vw, 2.75vw);
+    font-weight: 900;
     line-height: 130%;
     padding-bottom: 2.5%;
   }
+  h3 {
+    color: black;
+    font-size: 1.25rem;
+    // font-weight: 400;
+  }
   p {
     color: $light-color;
-    font-size: 1rem;
     font-weight: 400;
-    padding-bottom: 2.5%;
+    // padding-bottom: 2.5%;
   }
   .main-img {
     width: 100%;
-    height: auto;
+    height: 70vh;
+    object-fit: cover;
     padding-block: 2.5%;
-    border-top: 1px solid #d3d3d3;
+    border-top: 1px solid $border-color;
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
   }
   .article-content {
     p {
-      font-size: 1.15rem;
+      font-size: 1.25rem;
+      line-height: 170%;
+    }
+    li {
+      font-size: 1.25rem;
       line-height: 170%;
     }
   }
