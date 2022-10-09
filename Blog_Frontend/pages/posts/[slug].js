@@ -23,7 +23,6 @@ const PostComponents = {
 const Post = ({ post }) => {
   return (
     <div className={styles["article-container"]}>
-      {/* <Meta title={post.title} />
       {post && (
         <article>
           <h1>{post.title}</h1>
@@ -40,7 +39,7 @@ const Post = ({ post }) => {
             <PortableText value={post.body} components={PostComponents} />
           </div>
         </article>
-      )} */}
+      )}
     </div>
   );
 };
