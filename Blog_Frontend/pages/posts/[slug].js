@@ -27,7 +27,7 @@ const Post = ({ post }) => {
       {post && (
         <article>
           <h1>{post.title}</h1>
-          <h3>
+          <h3 style={{ color: "rgba(26, 28, 26, 0.9)" }}>
             Phil Elliott |{" "}
             <Moment format="MM/DD/YYYY">{post.publishedAt}</Moment>
           </h3>

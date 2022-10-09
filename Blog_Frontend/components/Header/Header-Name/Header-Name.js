@@ -5,7 +5,7 @@ const HeaderName = () => {
   return (
     <div className={styles["header-logo-container"]}>
       <h1>PEB</h1>
-      <p>Phillip Elliott Blog</p>
+      <p>Phil Elliott Blog</p>
     </div>
   );
 };
