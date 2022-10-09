@@ -1,7 +1,12 @@
-import React from "react";
+import { Meta } from "../components/Meta";
 
 const privacy = () => {
-  return <div>privacy</div>;
+  return (
+    <div>
+      <Meta title="Privacy Policy" />
+      privacy
+    </div>
+  );
 };
 
 export default privacy;

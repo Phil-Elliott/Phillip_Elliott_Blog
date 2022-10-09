@@ -1,3 +1,4 @@
+import { Meta } from "../../components/Meta";
 import groq from "groq";
 import { PortableText } from "@portabletext/react";
 import { urlFor } from "../../lib/sanity";
@@ -22,6 +23,7 @@ const PostComponents = {
 const Post = ({ post }) => {
   return (
     <div className={styles["article-container"]}>
+      <Meta title={post.title} />
       {post && (
         <article>
           <h1>{post.title}</h1>

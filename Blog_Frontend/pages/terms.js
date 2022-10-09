@@ -1,7 +1,12 @@
-import React from "react";
+import { Meta } from "../components/Meta";
 
 const terms = () => {
-  return <div>terms</div>;
+  return (
+    <div>
+      <Meta title="Terms and Conditions" />
+      terms
+    </div>
+  );
 };
 
 export default terms;
