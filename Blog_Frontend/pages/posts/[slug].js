@@ -23,6 +23,7 @@ const PostComponents = {
 const Post = ({ post }) => {
   return (
     <div className={styles["article-container"]}>
+      {post && <Meta title={post.title} />}
       {post && (
         <article>
           <h1>{post.title}</h1>
