@@ -3,7 +3,7 @@
 .home-section-header {
   color: $tertiary;
   padding-bottom: 2%;
-  font-size: clamp(1.25rem, 1.75vw, 1.75vw);
+  font-size: clamp(1.5rem, 1.75vw, 1.75vw);
   align-self: flex-start;
 }
 
@@ -20,7 +20,7 @@
 @media only screen and (max-width: 1000px) {
   .home-popular-container {
     width: 90%;
-    padding-block: 25% 0%;
+    // padding-block: 25% 0%;
   }
   .home-popular-articles-container {
     gap: 0;
