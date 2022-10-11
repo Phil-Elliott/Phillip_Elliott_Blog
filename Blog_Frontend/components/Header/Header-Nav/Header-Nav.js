@@ -38,3 +38,8 @@ const HeaderNav = () => {
 };
 
 export default HeaderNav;
+
+/*
+  make headernave sticky 
+
+*/

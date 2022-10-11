@@ -1,12 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { HeaderName, HeaderNav, HeaderRight, HamburgerIcon } from "./index";
 import styles from "./../../styles/Header/Header.module.scss";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [mainNavClass, setMainNavClass] = useState(`${styles.headerContainer}`);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    window.addEventListener("scroll", () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY) {
+        setMainNavClass(`${styles.headerContainer} ${styles.hiddenHeader}`);
+      } else {
+        setMainNavClass(`${styles.headerContainer}`);
+      }
+      lastScrollY = currentScrollY;
+    });
+  });
 
   return (
-    <header className={`${styles.headerContainer} ${styles.hiddenHeader}`}>
+    <header className={mainNavClass}>
       <div className={styles.headerContentContainer}>
         <div className={styles.headerTopContentContainer}>
           <div className={styles.hamburgerIcon}>
