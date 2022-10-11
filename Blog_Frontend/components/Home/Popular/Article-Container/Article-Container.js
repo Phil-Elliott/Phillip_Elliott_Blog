@@ -1,5 +1,8 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { useNextSanityImage } from "next-sanity-image";
+import { getClient } from "../../../../lib/sanity.server";
 import { urlFor } from "../../../../lib/sanity";
 import { PortableText } from "@portabletext/react";
 import styles from "./../../../../styles/Home/Popular/ArticleContainer.module.scss";
@@ -12,6 +15,7 @@ const ArticleContainer = ({
   noBorder,
   slug,
 }) => {
+  const imageProps = useNextSanityImage(getClient(), image);
   return (
     <Link
       href="/posts/[slug]"
@@ -31,11 +35,12 @@ const ArticleContainer = ({
           <PortableText value={description[0]} />
         </div>
         <div className={styles["home-popular-article-container-right"]}>
-          <img
+          <Image {...imageProps} alt="Featured Image" layout="fill" />
+          {/* <img
             className={styles["home-featured-image"]}
             src={urlFor(image)}
             alt="Coffee"
-          />
+          /> */}
         </div>
       </div>
     </Link>

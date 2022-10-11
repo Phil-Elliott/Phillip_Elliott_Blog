@@ -2,17 +2,24 @@
 
 .home-latest-article {
   cursor: pointer;
-  height: 100%;
+  height: 30rem;
+  position: relative;
 
-  img {
-    width: 100%;
-    object-fit: cover;
-    height: 75%;
-    display: flex;
-    justify-content: center;
-    // -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    // filter: grayscale(100%);
+  .home-latest-article-image {
+    height: 80%;
+    position: relative;
+
+    img {
+      // width: 100%;
+      object-fit: cover;
+      // height: 75%;
+      // display: flex;
+      // justify-content: center;
+      // -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+      // filter: grayscale(100%);
+    }
   }
+
   h2 {
     padding-top: 1rem;
     font-size: clamp(1.25rem, 1.5vw, 1.5vw);

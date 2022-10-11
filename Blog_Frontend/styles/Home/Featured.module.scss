@@ -51,12 +51,12 @@
   }
 }
 
-.home-featured-image {
-  width: 100%;
-  height: 50vh;
-  object-fit: cover;
-  // -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  // filter: grayscale(100%);
+.home-featured-right-container {
+  position: relative;
+
+  img {
+    object-fit: cover;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -71,5 +71,8 @@
   }
   .home-featured-left-container {
     order: 1;
+  }
+  .home-featured-right-container {
+    height: 45vh;
   }
 }
