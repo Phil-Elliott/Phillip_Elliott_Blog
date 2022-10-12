@@ -7,6 +7,7 @@
   min-height: 70vh;
   padding-top: clamp(8rem, 10%, 10%);
   padding-bottom: clamp(3rem, 5%, 5%);
+  position: relative;
 
   h1 {
     color: black;
@@ -52,6 +53,19 @@
       color: $light-color;
     }
   }
+}
+
+.code-image-container {
+  width: 100%;
+  position: relative;
+  object-fit: cover;
+}
+
+.code-image {
+  font-size: 1rem;
+  width: 100%;
+  position: relative;
+  object-fit: cover;
 }
 
 .post-image {

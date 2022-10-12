@@ -27,3 +27,14 @@ export default createSchema({
     blockContent,
   ]),
 });
+
+// {
+//   fields: [
+//     // [...]
+//     {
+//       name: 'exampleUsage',
+//       title: 'Example usage',
+//       type: 'code',
+//     },
+//   ]
+// }

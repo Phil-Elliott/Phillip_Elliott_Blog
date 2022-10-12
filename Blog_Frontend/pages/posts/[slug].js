@@ -3,10 +3,12 @@ import groq from "groq";
 import { PortableText } from "@portabletext/react";
 import { urlFor } from "../../lib/sanity";
 import Image from "next/image";
+import SyntaxHighlighter from "react-syntax-highlighter";
 import { useNextSanityImage } from "next-sanity-image";
 import { getClient } from "../../lib/sanity.server";
 import Moment from "react-moment";
 import styles from "./../../styles/Article.module.scss";
+import { atomOneDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 const PostComponents = {
   types: {
@@ -17,6 +19,37 @@ const PostComponents = {
           alt={value.alt || " "}
           src={urlFor(value)}
         />
+      );
+    },
+    code: ({ value }) => {
+      return (
+        <div className={styles["code-image-container"]}>
+          <SyntaxHighlighter
+            className={styles["code-image"]}
+            wrapLines={true}
+            wrapLongLines={true}
+            language={value.language}
+            style={atomOneDark}
+            // showInlineLineNumbers={true}
+            // showLineNumbers
+            lineProps={{
+              style: {
+                // wordBreak: "break-all",
+                // whiteSpace: "pre-wrap",
+              },
+            }}
+            // codeTagProps={{ style: { fontSize: "inherit" } }}
+            // customStyle={{ fontSize: 18 }}
+            lineNumberStyle={{
+              padding: "0 5px 0 0",
+              // fontSize: 14,
+              borderRight: "1.5px solid darkgray",
+              marginRight: "10px",
+            }}
+          >
+            {value.code}
+          </SyntaxHighlighter>
+        </div>
       );
     },
   },
@@ -37,11 +70,6 @@ const Post = ({ post }) => {
           <div className={styles["main-img"]}>
             <Image {...imageProps} alt="Featured Image" layout="fill" />
           </div>
-          {/* <img
-            className={styles["main-img"]}
-            src={urlFor(post.mainImage)}
-            alt=""
-          /> */}
           <div className={styles["article-content"]}>
             <PortableText value={post.body} components={PostComponents} />
           </div>
@@ -83,3 +111,19 @@ export async function getStaticProps({ params, preview = false }) {
 }
 
 export default Post;
+
+// code: (props) => (
+//   <SyntaxHighlighter
+//     language={props.node.language}
+//     style={coldarkDark}
+//     showLineNumbers
+//     lineNumberStyle={{
+//       padding: "0 5px 0 0",
+//       fontSize: 14,
+//       borderRight: "1.5px solid darkgray",
+//       marginRight: "10px",
+//     }}
+//   >
+//     {props.node.code}
+//   </SyntaxHighlighter>
+// ),
