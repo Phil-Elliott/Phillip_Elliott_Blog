@@ -56,7 +56,7 @@ const PostComponents = {
 };
 
 const Post = ({ post }) => {
-  const imageProps = useNextSanityImage(getClient(), post.mainImage);
+  const imageProps = post && useNextSanityImage(getClient(), post.mainImage);
   return (
     <div className={styles["article-container"]}>
       {post && <Meta title={post.title} />}
