@@ -10,10 +10,14 @@
     font-weight: 500;
     padding: 0.5rem 1rem;
     transition: $transistion-ease;
+    box-shadow: $box-shadow-light;
 
     &:hover {
       cursor: pointer;
-      opacity: 0.8;
+
+      background-color: $secondary;
+      color: $primary;
+      box-shadow: $box-shadow;
     }
   }
 }

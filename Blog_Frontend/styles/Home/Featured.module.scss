@@ -22,6 +22,7 @@
   @extend %flex-column-justify;
 
   h2 {
+    font-weight: 900;
     font-size: clamp(1.5rem, 2.25vw, 2.25vw);
     line-height: 150%;
     padding-bottom: 1.5rem;

@@ -5,26 +5,20 @@
   box-shadow: $box-shadow-light;
   position: fixed;
   width: 100%;
-  z-index: 100000;
-  transition: all 0.5s ease-in-out;
+  z-index: 100;
+  transition: $transistion-ease;
 }
 
 .headerContentContainer {
-  // // padding-block: 0.5rem;
   background-color: #da564a;
-  // // background-color: $tertiary;
-  // box-shadow: $box-shadow-light;
-  // // border-bottom: solid 1px $border-color;
-  // position: relative;
   position: relative;
   width: 100%;
-  z-index: 10000;
-  // transition: all 0.5s ease-in-out;
+  z-index: 10;
 }
 
 .hiddenHeader {
   transform: translateY(-100px);
-  transition: all 0.5s ease-in-out;
+  transition: $transistion-ease;
 }
 
 .headerTopContentContainer {
@@ -34,18 +28,14 @@
 }
 
 .headerBottomContentContainer {
-  border-bottom: solid 1px $border-color;
   transition: $transistion-ease;
   color: $secondary;
   background-color: $primary;
 }
 
 .headerBottomContentContainerClosed {
-  // margin-top: -2.75rem;
   margin-top: -4.25rem;
   transition: $transistion-ease;
-  // color: $primary;
-  // background-color: $primary;
 }
 
 .headerResponsiveLinksContainer {
@@ -65,15 +55,13 @@
   .headerFullSizeNav {
     display: none;
   }
-  .headerTopContentContainer {
-    width: 90%;
-  }
+  .headerTopContentContainer,
   .headerResponsiveLinksContainer {
     width: 90%;
   }
   .hiddenHeader {
     transform: translateY(-200px);
-    transition: all 0.5s ease-in-out;
+    transition: $transistion-ease;
   }
 }
 

@@ -111,19 +111,3 @@ export async function getStaticProps({ params, preview = false }) {
 }
 
 export default Post;
-
-// code: (props) => (
-//   <SyntaxHighlighter
-//     language={props.node.language}
-//     style={coldarkDark}
-//     showLineNumbers
-//     lineNumberStyle={{
-//       padding: "0 5px 0 0",
-//       fontSize: 14,
-//       borderRight: "1.5px solid darkgray",
-//       marginRight: "10px",
-//     }}
-//   >
-//     {props.node.code}
-//   </SyntaxHighlighter>
-// ),
