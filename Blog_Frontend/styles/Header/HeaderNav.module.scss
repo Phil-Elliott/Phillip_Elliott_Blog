@@ -23,3 +23,15 @@
 .header-nav-link-active {
   color: $tertiary;
 }
+
+@media only screen and (max-width: 1000px) {
+  .header-nav-container {
+    ul {
+      li {
+        &:hover {
+          color: $tertiary;
+        }
+      }
+    }
+  }
+}

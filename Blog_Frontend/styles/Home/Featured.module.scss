@@ -7,6 +7,7 @@
 }
 
 .home-featured-article-container {
+  // height: 40vh;
   cursor: pointer;
   @extend %grid-two-columns;
 }
@@ -54,6 +55,7 @@
 
 .home-featured-right-container {
   position: relative;
+  min-height: 45vh;
 
   img {
     object-fit: cover;

@@ -2,9 +2,11 @@ import React, { useState, useRef, useEffect } from "react";
 import { HeaderName, HeaderNav, HeaderRight, HamburgerIcon } from "./index";
 import styles from "./../../styles/Header/Header.module.scss";
 
-const Header = () => {
+const Header = ({ changeModalDisplay }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [mainNavClass, setMainNavClass] = useState(`${styles.headerContainer}`);
+
+  // console.log(changeModalDisplay);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -30,7 +32,7 @@ const Header = () => {
           <div className={styles.headerFullSizeNav}>
             <HeaderNav />
           </div>
-          <HeaderRight />
+          <HeaderRight changeModalDisplay={changeModalDisplay} />
         </div>
       </div>
       <div

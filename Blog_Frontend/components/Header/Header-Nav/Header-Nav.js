@@ -27,9 +27,9 @@ const HeaderNav = () => {
       <ul>
         {NavLinks.map((link) => {
           return (
-            <li key={link.name}>
-              <Link href={link.path}>{link.name}</Link>
-            </li>
+            <Link href={link.path}>
+              <li key={link.name}>{link.name}</li>
+            </Link>
           );
         })}
       </ul>
@@ -38,8 +38,3 @@ const HeaderNav = () => {
 };
 
 export default HeaderNav;
-
-/*
-  make headernave sticky 
-
-*/

@@ -5,13 +5,13 @@
   width: 50%;
   @extend %flex-column;
   min-height: 70vh;
-  padding-top: clamp(8rem, 10%, 10%);
+  padding-top: clamp(6rem, 7%, 7%);
   padding-bottom: clamp(3rem, 5%, 5%);
   position: relative;
 
   h1 {
     color: black;
-    font-size: clamp(1.5rem, 2.75vw, 2.75vw);
+    font-size: clamp(1.75rem, 2.75vw, 2.75vw);
     font-weight: 900;
     line-height: 130%;
     padding-bottom: 2.5%;
