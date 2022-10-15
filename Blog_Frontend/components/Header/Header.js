@@ -1,12 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { HeaderName, HeaderNav, HeaderRight, HamburgerIcon } from "./index";
 import styles from "./../../styles/Header/Header.module.scss";
 
 const Header = ({ changeModalDisplay }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [mainNavClass, setMainNavClass] = useState(`${styles.headerContainer}`);
-
-  // console.log(changeModalDisplay);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -51,6 +49,3 @@ const Header = ({ changeModalDisplay }) => {
 };
 
 export default Header;
-
-// Will need to fix responsive header - gets messed up with fixed header
-// Probably used a negative margin for space reasons

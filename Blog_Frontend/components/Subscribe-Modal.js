@@ -1,18 +1,26 @@
 import { useState } from "react";
 import styles from "../styles/SubscribeModal.module.scss";
 
-const SubscribeModal = ({ changeModalDisplay }) => {
+const SubscribeModal = ({ changeModalDisplay, displayModal }) => {
   return (
     <div
-      className={styles["subscribe-modal-container"]}
+      className={
+        displayModal
+          ? `${styles["modal"]} ${styles["show"]}`
+          : `${styles["modal"]}`
+      }
       id="subscribeModal"
       tabIndex="-1"
       role="dialog"
       aria-labelledby="subscribeModalLabel"
       aria-hidden="true"
-      //   onClick={() => changeModalDisplay()}
+      // onClick={() => changeModalDisplay()}
     >
-      <div className={styles["modal-dialog"]} role="document">
+      <div
+        className={styles["modal-dialog"]}
+        role="document"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className={styles["modal-content"]}>
           <div className={styles["modal-header"]}>
             <h5 className={styles["modal-title"]} id="subscribeModalLabel">

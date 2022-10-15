@@ -1,10 +1,8 @@
-import React from "react";
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import Image from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
 import { getClient } from "../../../lib/sanity.server";
-import { urlFor } from "../../../lib/sanity";
 import styles from "./../../../styles/Home/Featured.module.scss";
 
 const Featured = (post) => {
@@ -34,18 +32,8 @@ const Featured = (post) => {
             </div>
           </div>
           <div className={styles["home-featured-right-container"]}>
-            <Image
-              {...imageProps}
-              alt="Featured Image"
-              layout="fill"
-              // className={styles["home-featured-image"]}
-            />
+            <Image {...imageProps} alt="Featured Image" layout="fill" />
           </div>
-          {/* <img
-            className={styles["home-featured-image"]}
-            src={urlFor(post.post.mainImage)}
-            alt="Coffee"
-          /> */}
         </div>
       </Link>
     </section>

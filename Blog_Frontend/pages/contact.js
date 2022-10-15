@@ -10,26 +10,27 @@ const Contact = () => {
         <h1>Contact Us</h1>
         <h2>Reaching Out</h2>
         <p>
-          Thanks for taking the time to check out my blog. I hope you're finding
-          it useful so far. I'm always looking for ways to improve, so if you
-          have any suggestions, please don't hesitate to get in touch. You can
-          reach me by email at <a href="#"> blahblahbla@gmail.com</a>.
+          Thank you for reading my blog. If you have any comments or suggestions
+          on how I can improve, please contact me at{" "}
+          <a href="#"> blahblahbla@gmail.com</a>. Your feedback is greatly
+          appreciated!
         </p>
         <h2>Advertising</h2>
         <p>
-          If you're interested in advertising on my site, I'd love to hear from
-          you. Send me an email at <a href="#"> blahblahbla@gmail.com</a> with
-          "Advertising" in the subject line, and tell me a little bit about your
-          business or product. I'm always looking for new partnerships that can
-          provide value for my users.
+          If you think that your business or product would be a good fit for my
+          website, shoot me an email at <a href="#"> blahblahbla@gmail.com</a>.
+          In the subject line, just write "Advertising" so that I can easily
+          find it later. Give me a brief overview of what you're offering and
+          why you think it would add value for my readers. I'm always on the
+          lookout for new companies to partner with!
         </p>
         <h2>Coming Soon</h2>
         <p>
-          The future of this blog is very exciting. I have many plans for it,
-          including sending weekly newsletters to my subscribed users and
-          bringing my content to social media platforms. This will help me reach
-          a wider audience and continue providing interesting and valuable
-          content. Thank you for reading and supporting this blog!
+          This blog is only going to get better from here! I have a lot of
+          exciting plans for it, like sending weekly newsletters to subscribers
+          and bringing my content to social media platforms. That way, I can
+          reach more people with the valuable information they're looking for.
+          Thank you for being part of this journey with me!
         </p>
       </div>
     </div>

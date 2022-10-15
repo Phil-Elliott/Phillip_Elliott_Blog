@@ -1,11 +1,8 @@
-import Featured from "../components/Home/Featured/Featured";
-import { Latest } from "../components/Home/Latest/Latest";
-import Popular from "../components/Home/Popular/Popular";
+import { Featured, Popular, Latest } from "../components/Home/index";
 import { Meta } from "../components/Meta";
-import Image from "next/image";
-import styles from "./../styles/Home/Home.module.scss";
 import { getClient } from "../lib/sanity.server";
 import groq from "groq";
+import styles from "./../styles/Home/Home.module.scss";
 
 const Home = ({ posts }) => {
   return (
@@ -41,3 +38,9 @@ export async function getStaticProps({ preview = false }) {
 }
 
 export default Home;
+
+/*
+2) Have modal come down from top 
+
+
+*/

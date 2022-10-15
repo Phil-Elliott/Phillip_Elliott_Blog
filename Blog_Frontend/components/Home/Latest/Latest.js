@@ -3,9 +3,7 @@ import SliderArticle from "./Slider-Article/Slider-Article";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import styles from "./../../../styles/Home/Latest/Latest.module.scss";
 
-export const Latest = (posts) => {
-  console.log(posts);
-
+const Latest = (posts) => {
   return (
     <section className={styles["home-latest-container"]}>
       <h1 className={styles["home-section-header"]}>Latest</h1>
@@ -28,6 +26,8 @@ export const Latest = (posts) => {
     </section>
   );
 };
+
+export default Latest;
 
 /*
 

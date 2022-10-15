@@ -1,6 +1,6 @@
 @import "./Shared.scss";
 
-.subscribe-modal-container {
+.modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -11,6 +11,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  pointer-events: none;
+  transition: $transistion-ease;
+  opacity: 0;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: visible;
+  transition: $transistion-ease;
 }
 
 .modal-dialog {
@@ -20,6 +29,21 @@
   border-radius: 5px;
   padding: 2rem 2rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  // transform: translateY(-200px);
+  // transition: $transistion-ease;
+  // have modal transition down
+  transform: translateY(-200px);
+  transition: $transistion-ease;
+}
+
+// .modal-dialog .modal.show {
+//   transform: translateY(0);
+//   transition: $transistion-ease;
+// }
+
+.modal.show .modal-dialog {
+  transform: translateY(0);
+  transition: $transistion-ease;
 }
 
 .modal-content {
@@ -53,6 +77,10 @@
     color: $primary;
     border-radius: 5px;
     align-self: flex-start;
+
+    &:hover {
+      box-shadow: $box-shadow-light;
+    }
   }
 }
 
@@ -126,4 +154,8 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
+
+  &:hover {
+    box-shadow: $box-shadow-light;
+  }
 }

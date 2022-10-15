@@ -8,6 +8,7 @@ import styles from "./../../../../styles/Home/Latest/SliderArticle.module.scss";
 
 const SliderArticle = ({ title, image, slug }) => {
   const imageProps = useNextSanityImage(getClient(), image);
+  const shortTitle = title.length > 30 ? title.slice(0, 30) + "..." : title;
 
   return (
     <Link
@@ -17,10 +18,9 @@ const SliderArticle = ({ title, image, slug }) => {
     >
       <div className={styles["home-latest-article"]}>
         <div className={styles["home-latest-article-image"]}>
-          <Image {...imageProps} alt="Featured Image" layout="fill" />
+          <Image {...imageProps} alt="fun image for article" layout="fill" />
         </div>
-        {/* <img src={urlFor(image)} alt="Need to put something good here" /> */}
-        <h2>{title}</h2>
+        <h2 title={title}>{shortTitle}</h2>
       </div>
     </Link>
   );

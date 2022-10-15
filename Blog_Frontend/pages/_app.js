@@ -14,7 +14,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       {displayModal && (
-        <SubscribeModal changeModalDisplay={changeModalDisplay} />
+        <SubscribeModal
+          changeModalDisplay={changeModalDisplay}
+          displayModal={displayModal}
+        />
       )}
       <Component {...pageProps} changeModalDisplay={changeModalDisplay} />
     </Layout>

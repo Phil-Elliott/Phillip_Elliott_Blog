@@ -42,7 +42,10 @@
 }
 
 .home-popular-article-container-right {
-  height: 33rem;
+  // *************
+  height: 100%;
+  // *************
+  // height: 33rem;
   position: relative;
 
   img {
@@ -69,7 +72,7 @@
     padding-bottom: 1rem;
   }
   .home-popular-article-container-right {
-    // height: 100%;
+    height: 20rem;
     img {
       // height: 100%;
     }
