@@ -5,7 +5,7 @@ const HeaderName = () => {
   return (
     <div className={styles["header-logo-container"]}>
       <h1>dF</h1>
-      <p>developerFlex</p>
+      <p>devFlex</p>
     </div>
   );
 };

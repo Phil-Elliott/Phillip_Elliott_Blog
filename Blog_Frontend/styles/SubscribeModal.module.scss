@@ -29,17 +29,9 @@
   border-radius: 5px;
   padding: 2rem 2rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  // transform: translateY(-200px);
-  // transition: $transistion-ease;
-  // have modal transition down
   transform: translateY(-200px);
   transition: $transistion-ease;
 }
-
-// .modal-dialog .modal.show {
-//   transform: translateY(0);
-//   transition: $transistion-ease;
-// }
 
 .modal.show .modal-dialog {
   transform: translateY(0);

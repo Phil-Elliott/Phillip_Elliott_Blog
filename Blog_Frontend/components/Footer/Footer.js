@@ -28,7 +28,7 @@ const NavLinks = [
 const Footer = () => {
   return (
     <footer className={styles["footer-container"]}>
-      <h1>developerFlex</h1>
+      <h1>devFlex</h1>
       <nav>
         <ul>
           {NavLinks.map((link) => {
