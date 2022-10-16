@@ -8,22 +8,21 @@ const About = () => {
       <Meta title="About" />
       <div>
         <h1>About Us</h1>
-        <h2>Providing valuable content to help you learn</h2>
+        <h2>Content that helps you learn and grow</h2>
         <p>
-          One of the most difficult things about learning to program is
-          understanding all of the new concepts. It can be difficult to keep
-          track of everything, and often times you will find yourself forgetting
-          what you have learned. However, with a little bit of practice, and by
-          using this blog as a resource, you will be able to better understand
-          the concepts.
+          Learning how to program often comes with a lot of new, daunting
+          concepts. It's tough to keep track of it all and you might find
+          yourself forgetting what you've learned along the way. But don't
+          worry! A little bit of practice will help embed these concepts in your
+          memory so that they'll stick with you for good. This blog can act as a
+          valuable resource during your journey towards programming mastery!
         </p>
-        <h2>Articles on many topic</h2>
+        <h2>Articles on many topics</h2>
         <p>
           In web development, there are multiple tools that can be used in order
           to create a website or application. I have been studying and using
-          both front-end and back-end tools for some time now, and I hope that
-          by chronicling my learning process here, I can also help you learn
-          along with me.
+          both front-end and back-end tools, and I hope that by chronicling my
+          learning process here, I can also help you learn along with me.
         </p>
         <h2>Articles every week</h2>
         <p>

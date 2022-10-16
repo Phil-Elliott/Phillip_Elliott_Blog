@@ -15,10 +15,10 @@ const NavLinks = [
     name: "Privacy Policy",
     path: "/privacy",
   },
-  {
-    name: "Terms of use",
-    path: "/terms",
-  },
+  // {
+  //   name: "Terms of use",
+  //   path: "/terms",
+  // },
   {
     name: "Contact",
     path: "/contact",
@@ -28,7 +28,7 @@ const NavLinks = [
 const Footer = () => {
   return (
     <footer className={styles["footer-container"]}>
-      <h1>devFlex</h1>
+      <h1>Phil Elliott Blog</h1>
       <nav>
         <ul>
           {NavLinks.map((link) => {
@@ -40,7 +40,7 @@ const Footer = () => {
           })}
         </ul>
       </nav>
-      <p>Copyright © developerFlex. All Rights Reserved.</p>
+      <p>Copyright © PhilElliottBlog. All Rights Reserved.</p>
     </footer>
   );
 };
