@@ -18,9 +18,11 @@ const ArticleContainer = ({
   author,
   authorImage,
   publishedAt,
+  categories,
 }) => {
   const imageProps = useNextSanityImage(getClient(), image);
   const authorImageProps = useNextSanityImage(getClient(), authorImage);
+
   return (
     <Link
       href="/posts/[slug]"

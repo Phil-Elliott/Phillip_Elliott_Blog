@@ -82,6 +82,19 @@ const ArticlesContainer = (posts) => {
   return (
     <div className={styles["main-articles-container"]}>
       <Meta title="Articles" />
+      <h1 className={styles["main-articles-container-header"]}>Articles</h1>
+      <div className={styles["main-articles-filter-container"]}>
+        <div className={styles["filter-container-categories"]}>
+          <select className={styles["filter-container-categories-select"]}>
+            <option value="all">All</option>
+            <option value="category1">Category 1</option>
+            <option value="category2">Category 2</option>
+            <option value="category3">Category 3</option>
+          </select>
+        </div>
+        <p className={styles["filter-container-article-count"]}>10 Articles</p>
+        {/* <div className={styles["filter-container-options"]}></div> */}
+      </div>
       <div className={styles["home-popular-articles-container"]}>
         {posts.posts.map((post, index) => {
           return (
@@ -96,6 +109,7 @@ const ArticlesContainer = (posts) => {
               author={post.username}
               authorImage={post.authorImage}
               publishedAt={post.publishedAt}
+              categories={post.categories}
             />
           );
         })}
@@ -116,7 +130,8 @@ export async function getStaticProps({ preview = false }) {
       mainImage, 
       slug, 
       publishedAt,
-      categories
+      // categories
+      categories[]->{id, title}
     }
     `);
   return {
@@ -130,8 +145,8 @@ export default ArticlesContainer;
 
 /*  
 
-  Can be the same as home popular section 
-
-  later you can add lazy loading of even numbers at bottom to change results
+ 1) categories
+ 2) article count
+ 3) filter options
 
 */
