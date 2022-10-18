@@ -9,12 +9,16 @@
 
 .home-popular-container {
   @extend %main-width;
+  width: 80%;
   padding-block: 2.5%;
 }
 
 .home-popular-articles-container {
   // display: grid;
   // gap: 3%;
+
+  // width: 80%;
+  // margin: 0 auto;
 }
 
 @media only screen and (max-width: 1000px) {

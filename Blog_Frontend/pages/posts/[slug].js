@@ -56,17 +56,25 @@ const PostComponents = {
 };
 
 const Post = ({ post }) => {
+  // console.log(post);
   const imageProps = post && useNextSanityImage(getClient(), post.mainImage);
+  const authorImageProps =
+    post && useNextSanityImage(getClient(), post.authorImage);
   return (
     <div className={styles["article-container"]}>
       {post && <Meta title={post.title} />}
       {post && (
         <article>
           <h1>{post.title}</h1>
-          <h3 style={{ color: "rgba(26, 28, 26, 0.9)" }}>
-            Phil Elliott |{" "}
-            <Moment format="MM/DD/YYYY">{post.publishedAt}</Moment>
-          </h3>
+          <div className={styles["article-author-container"]}>
+            <div className={styles["article-author-image-container"]}>
+              <Image {...authorImageProps} alt="Featured Image" />
+            </div>
+            <h3 style={{ color: "rgba(26, 28, 26, 0.9)" }}>
+              Phil Elliott |{" "}
+              <Moment format="MM/DD/YYYY">{post.publishedAt}</Moment>
+            </h3>
+          </div>
           <div className={styles["main-img"]}>
             <Image {...imageProps} alt="Featured Image" layout="fill" />
           </div>
@@ -81,8 +89,9 @@ const Post = ({ post }) => {
 
 const query = groq`*[_type == "post" && slug.current == $slug][0] {
       title,
-      "username": author->username,
-      "authorImage": author->avatar,
+      "username": author->name,
+      "authorImage": author->image,
+      
       body,
       mainImage, 
       publishedAt, 

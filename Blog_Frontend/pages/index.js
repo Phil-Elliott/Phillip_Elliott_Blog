@@ -20,12 +20,12 @@ export async function getStaticProps({ preview = false }) {
     *[_type == "post" ] | order(publishedAt desc) {
       _id,
       title,
-      "username": author->username,
+      "username": author->name,
+      "authorImage": author->image,
       // "categories": categories[]->{id, title}
-      "authorImage": author->avatar,
       body,
       mainImage, 
-      slug, 
+      slug,  
       publishedAt,
       categories
     }

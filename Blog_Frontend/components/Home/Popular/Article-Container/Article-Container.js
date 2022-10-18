@@ -6,6 +6,7 @@ import { getClient } from "../../../../lib/sanity.server";
 import { urlFor } from "../../../../lib/sanity";
 import { PortableText } from "@portabletext/react";
 import styles from "./../../../../styles/Home/Popular/ArticleContainer.module.scss";
+import Moment from "react-moment";
 
 const ArticleContainer = ({
   title,
@@ -14,8 +15,12 @@ const ArticleContainer = ({
   index,
   noBorder,
   slug,
+  author,
+  authorImage,
+  publishedAt,
 }) => {
   const imageProps = useNextSanityImage(getClient(), image);
+  const authorImageProps = useNextSanityImage(getClient(), authorImage);
   return (
     <Link
       href="/posts/[slug]"
@@ -33,14 +38,21 @@ const ArticleContainer = ({
         >
           <h1>{title}</h1>
           <PortableText value={description[0]} />
+          <div className={styles["author-container"]}>
+            <div className={styles["author-image-container"]}>
+              <Image
+                {...authorImageProps}
+                alt={author}
+                className={styles["author-image"]}
+              />
+            </div>
+            <h3 style={{ color: "rgba(26, 28, 26, 0.9)" }}>
+              Phil Elliott | <Moment format="MM/DD/YYYY">{publishedAt}</Moment>
+            </h3>
+          </div>
         </div>
         <div className={styles["home-popular-article-container-right"]}>
           <Image {...imageProps} alt="Featured Image" layout="fill" />
-          {/* <img
-            className={styles["home-featured-image"]}
-            src={urlFor(image)}
-            alt="Coffee"
-          /> */}
         </div>
       </div>
     </Link>

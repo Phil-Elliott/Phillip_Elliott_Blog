@@ -93,6 +93,9 @@ const ArticlesContainer = (posts) => {
               image={post.mainImage}
               slug={post.slug}
               noBorder={true}
+              author={post.username}
+              authorImage={post.authorImage}
+              publishedAt={post.publishedAt}
             />
           );
         })}
@@ -103,12 +106,12 @@ const ArticlesContainer = (posts) => {
 
 export async function getStaticProps({ preview = false }) {
   const posts = await getClient(preview).fetch(groq`
-    *[_type == "post" ] | order(publishedAt desc) {
+    *[_type == "post" ] | order(publishedAt desc) { 
       _id,
       title,
       "username": author->username,
       // "categories": categories[]->{id, title}
-      "authorImage": author->avatar,
+      "authorImage": author->image,
       body,
       mainImage, 
       slug, 
