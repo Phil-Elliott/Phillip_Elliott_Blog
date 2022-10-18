@@ -1,102 +1,86 @@
-import React from "react";
+import { useState } from "react";
 import ArticleContainer from "../components/Home/Popular/Article-Container/Article-Container";
 import { Meta } from "../components/Meta";
 import { getClient } from "../lib/sanity.server";
 import groq from "groq";
 import styles from "./../styles/Articles.module.scss";
 
-const featuredArticles = [
-  {
-    title: "Start your day with the right cup of coffee",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image:
-      "https://cdn.pixabay.com/photo/2016/11/21/12/10/tv-1844964_960_720.jpg",
-  },
-  {
-    title: "Start your day with the right cup of coffee",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image:
-      "https://cdn.pixabay.com/photo/2020/01/22/18/23/istanbul-4785964_960_720.jpg",
-  },
-  {
-    title: "Start your day with the right cup of coffee",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image:
-      "https://cdn.pixabay.com/photo/2016/04/30/08/35/aircraft-1362586_960_720.jpg",
-  },
-  {
-    title: "Start your day with the right cup of coffee",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image:
-      "https://cdn.pixabay.com/photo/2013/08/11/19/46/coffee-171653_960_720.jpg",
-  },
-  {
-    title: "Start your day with the right cup of coffee",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image:
-      "https://cdn.pixabay.com/photo/2020/01/22/18/23/istanbul-4785964_960_720.jpg",
-  },
-  {
-    title: "Start your day with the right cup of coffee",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image:
-      "https://cdn.pixabay.com/photo/2016/11/21/12/10/tv-1844964_960_720.jpg",
-  },
-  {
-    title: "Start your day with the right cup of coffee",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image:
-      "https://cdn.pixabay.com/photo/2020/01/22/18/23/istanbul-4785964_960_720.jpg",
-  },
-  {
-    title: "Start your day with the right cup of coffee",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image:
-      "https://cdn.pixabay.com/photo/2016/04/30/08/35/aircraft-1362586_960_720.jpg",
-  },
-  {
-    title: "Start your day with the right cup of coffee",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image:
-      "https://cdn.pixabay.com/photo/2013/08/11/19/46/coffee-171653_960_720.jpg",
-  },
-  {
-    title: "Start your day with the right cup of coffee",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image:
-      "https://cdn.pixabay.com/photo/2020/01/22/18/23/istanbul-4785964_960_720.jpg",
-  },
-];
-
 const ArticlesContainer = (posts) => {
+  const [category, setCategory] = useState("All");
+  const [filteredPosts, setFilteredPosts] = useState(posts.posts);
+  // Finds all of the categories of the articles
+  let categories = [];
+  posts.posts.map((post) => {
+    if (post.categories) {
+      post.categories.map((category) => {
+        if (!categories.includes(category.title)) {
+          categories.push(category.title);
+        }
+      });
+    }
+  });
+
+  // Sorts the articles by category
+  let sortedPosts = [];
+  categories.map((category) => {
+    let categoryPosts = [];
+    posts.posts.map((post) => {
+      if (post.categories) {
+        post.categories.map((postCategory) => {
+          if (postCategory.title === category) {
+            categoryPosts.push(post);
+          }
+        });
+      }
+    });
+    sortedPosts.push({ category: category, posts: categoryPosts });
+  });
+
+  sortedPosts.push({ category: "All", posts: posts.posts });
+
+  // Changes the post when an option is select
+  const changeCategory = (e) => {
+    {
+      setCategory(e.target.value);
+      if (e.target.value === "All") {
+        setFilteredPosts(posts.posts);
+      } else {
+        let filteredPosts = [];
+        sortedPosts.map((sortedPost) => {
+          if (sortedPost.category === e.target.value) {
+            filteredPosts = sortedPost.posts;
+          }
+        });
+        setFilteredPosts(filteredPosts);
+      }
+    }
+  };
+
+  // Count of the articles displayed
+  const count = filteredPosts.length;
+  const display = count > 1 ? `${count} Articles` : `${count} Article`;
+
   return (
     <div className={styles["main-articles-container"]}>
       <Meta title="Articles" />
       <h1 className={styles["main-articles-container-header"]}>Articles</h1>
       <div className={styles["main-articles-filter-container"]}>
         <div className={styles["filter-container-categories"]}>
-          <select className={styles["filter-container-categories-select"]}>
-            <option value="all">All</option>
-            <option value="category1">Category 1</option>
-            <option value="category2">Category 2</option>
-            <option value="category3">Category 3</option>
+          <select
+            className={styles["filter-container-categories-select"]}
+            onChange={(e) => changeCategory(e)}
+          >
+            <option value="All">All</option>
+            {categories.map((category) => {
+              return <option value={category}>{category}</option>;
+            })}
           </select>
         </div>
-        <p className={styles["filter-container-article-count"]}>10 Articles</p>
+        <p className={styles["filter-container-article-count"]}>{display}</p>
         {/* <div className={styles["filter-container-options"]}></div> */}
       </div>
       <div className={styles["home-popular-articles-container"]}>
-        {posts.posts.map((post, index) => {
+        {filteredPosts.map((post, index) => {
           return (
             <ArticleContainer
               key={index}
@@ -148,5 +132,16 @@ export default ArticlesContainer;
  1) categories
  2) article count
  3) filter options
+
+
+need to get the categories from the posts and then display them in the select box
+  map through and make an array of all of the categories and no duplicates
+
+
+
+filter articles based off of selection
+put a conditional in the map 
+
+can add an onchange to the select box and then set the state of the category to the value of the select box
 
 */
