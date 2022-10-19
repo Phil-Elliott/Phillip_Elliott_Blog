@@ -1,52 +1,31 @@
 import { useEffect, useState } from "react";
 import ArticleContainer from "../components/Home/Popular/Article-Container/Article-Container";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { Filter, PageIndex } from "../components/Articles";
+import { getCategories, sortPosts } from "../components/Articles/functions";
 import { Meta } from "../components/Meta";
 import { getClient } from "../lib/sanity.server";
 import groq from "groq";
 import styles from "./../styles/Articles.module.scss";
 
 const ArticlesContainer = (posts) => {
-  const [category, setCategory] = useState("All");
+  const [categories, setCategories] = useState([]);
+  const [sortedPosts, setSortedPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState(posts.posts);
   const [count, setCount] = useState(posts.posts.length);
   const [pageCount, setPageCount] = useState(1);
   const [pageNumber, setPageNumber] = useState(1);
 
-  // Finds all of the categories of the articles
-  let categories = [];
-  posts.posts.map((post) => {
-    if (post.categories) {
-      post.categories.map((category) => {
-        if (!categories.includes(category.title)) {
-          categories.push(category.title);
-        }
-      });
-    }
-  });
+  useEffect(() => {
+    setCategories(getCategories(posts.posts));
+  }, []);
 
-  // Sorts the articles by category
-  let sortedPosts = [];
-  categories.map((category) => {
-    let categoryPosts = [];
-    posts.posts.map((post) => {
-      if (post.categories) {
-        post.categories.map((postCategory) => {
-          if (postCategory.title === category) {
-            categoryPosts.push(post);
-          }
-        });
-      }
-    });
-    sortedPosts.push({ category: category, posts: categoryPosts });
-  });
-
-  sortedPosts.push({ category: "All", posts: posts.posts });
+  useEffect(() => {
+    setSortedPosts(sortPosts(categories, posts));
+  }, [categories]);
 
   // Changes the post when an option is select
   const changeCategory = (e) => {
     {
-      setCategory(e.target.value);
       if (e.target.value === "All") {
         setFilteredPosts(posts.posts);
       } else {
@@ -90,21 +69,11 @@ const ArticlesContainer = (posts) => {
     <div className={styles["main-articles-container"]}>
       <Meta title="Articles" />
       <h1 className={styles["main-articles-container-header"]}>Articles</h1>
-      <div className={styles["main-articles-filter-container"]}>
-        <div className={styles["filter-container-categories"]}>
-          <select
-            className={styles["filter-container-categories-select"]}
-            onChange={(e) => changeCategory(e)}
-          >
-            <option value="All">All</option>
-            {categories.map((category) => {
-              return <option value={category}>{category}</option>;
-            })}
-          </select>
-        </div>
-        <p className={styles["filter-container-article-count"]}>{display}</p>
-        {/* <div className={styles["filter-container-options"]}></div> */}
-      </div>
+      <Filter
+        categories={categories}
+        changeCategory={changeCategory}
+        display={display}
+      />
       <div className={styles["home-popular-articles-container"]}>
         {filteredPosts.map((post, index) => {
           if (index < pageNumber * 5 && index >= (pageNumber - 1) * 5) {
@@ -127,7 +96,7 @@ const ArticlesContainer = (posts) => {
         })}
       </div>
 
-      {pageCount > 1 && (
+      {/* {pageCount > 1 && (
         <div className={styles["articles-numberLine-container"]}>
           {pageNumber > 1 && (
             <FaChevronLeft
@@ -157,7 +126,12 @@ const ArticlesContainer = (posts) => {
             />
           )}
         </div>
-      )}
+      )} */}
+      <PageIndex
+        pageCount={pageCount}
+        pageNumber={pageNumber}
+        changePage={changePage}
+      />
     </div>
   );
 };
