@@ -48,7 +48,7 @@ const Popular = (posts) => {
       <h1 className={styles["home-section-header"]}>Popular</h1>
       <div className={styles["home-popular-articles-container"]}>
         {posts.posts.map((post, index) => {
-          if (index > 3) {
+          if (index > 3 && index < 9) {
             return (
               <ArticleContainer
                 key={index}

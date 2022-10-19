@@ -59,6 +59,7 @@ const ArticlesContainer = (posts) => {
 
   // Changes the page number
   const changePage = (number) => {
+    console.log(number, pageNumber);
     if (number !== pageNumber) {
       setPageNumber(number);
       goToTop();
