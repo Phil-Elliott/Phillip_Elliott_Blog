@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ArticleContainer from "../components/Home/Popular/Article-Container/Article-Container";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Meta } from "../components/Meta";
 import { getClient } from "../lib/sanity.server";
 import groq from "groq";
@@ -126,21 +127,37 @@ const ArticlesContainer = (posts) => {
         })}
       </div>
 
-      {/* <div className={styles["articles-numberLine-container"]}> */}
-      <div className={styles["articles-numberLine"]}>
-        {pageCount > 1 &&
-          Array.from(Array(pageCount).keys()).map((number) => {
-            return (
-              <div
-                className={styles["articles-numberLine-number"]}
-                onClick={() => changePage(number + 1)}
-              >
-                {number + 1}
-              </div>
-            );
-          })}
-      </div>
-      {/* </div> */}
+      {pageCount > 1 && (
+        <div className={styles["articles-numberLine-container"]}>
+          {pageNumber > 1 && (
+            <FaChevronLeft
+              className={styles["numberLine-arrow"]}
+              onClick={() => changePage(pageNumber - 1)}
+            />
+          )}
+
+          <div className={styles["articles-numberLine"]}>
+            {Array.from(Array(pageCount).keys()).map((number) => {
+              return (
+                <div
+                  style={number + 1 === pageNumber ? { color: "#d05a49" } : {}}
+                  className={styles["articles-numberLine-number"]}
+                  onClick={() => changePage(pageNumber + 1)}
+                >
+                  {number + 1}
+                </div>
+              );
+            })}
+          </div>
+
+          {pageNumber < pageCount && (
+            <FaChevronRight
+              className={styles["numberLine-arrow"]}
+              onClick={() => changePage(pageNumber + 1)}
+            />
+          )}
+        </div>
+      )}
     </div>
   );
 };
