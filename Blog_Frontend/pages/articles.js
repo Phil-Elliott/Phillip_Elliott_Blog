@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ArticleContainer from "../components/Home/Popular/Article-Container/Article-Container";
 import { Meta } from "../components/Meta";
 import { getClient } from "../lib/sanity.server";
@@ -8,6 +8,10 @@ import styles from "./../styles/Articles.module.scss";
 const ArticlesContainer = (posts) => {
   const [category, setCategory] = useState("All");
   const [filteredPosts, setFilteredPosts] = useState(posts.posts);
+  const [count, setCount] = useState(posts.posts.length);
+  const [pageCount, setPageCount] = useState(1);
+  const [pageNumber, setPageNumber] = useState(1);
+
   // Finds all of the categories of the articles
   let categories = [];
   posts.posts.map((post) => {
@@ -57,8 +61,29 @@ const ArticlesContainer = (posts) => {
   };
 
   // Count of the articles displayed
-  const count = filteredPosts.length;
   const display = count > 1 ? `${count} Articles` : `${count} Article`;
+
+  useEffect(() => {
+    setCount(filteredPosts.length);
+    setPageCount(Math.ceil(filteredPosts.length / 5));
+    setPageNumber(1);
+  }, [filteredPosts]);
+
+  // goes to top of page when number in numberline is clicked
+  const goToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  // Changes the page number
+  const changePage = (number) => {
+    if (number !== pageNumber) {
+      setPageNumber(number);
+      goToTop();
+    }
+  };
 
   return (
     <div className={styles["main-articles-container"]}>
@@ -81,23 +106,41 @@ const ArticlesContainer = (posts) => {
       </div>
       <div className={styles["home-popular-articles-container"]}>
         {filteredPosts.map((post, index) => {
-          return (
-            <ArticleContainer
-              key={index}
-              index={index}
-              title={post.title}
-              description={post.body}
-              image={post.mainImage}
-              slug={post.slug}
-              noBorder={true}
-              author={post.username}
-              authorImage={post.authorImage}
-              publishedAt={post.publishedAt}
-              categories={post.categories}
-            />
-          );
+          if (index < pageNumber * 5 && index >= (pageNumber - 1) * 5) {
+            return (
+              <ArticleContainer
+                key={index}
+                index={index}
+                title={post.title}
+                description={post.body}
+                image={post.mainImage}
+                slug={post.slug}
+                noBorder={true}
+                author={post.username}
+                authorImage={post.authorImage}
+                publishedAt={post.publishedAt}
+                categories={post.categories}
+              />
+            );
+          }
         })}
       </div>
+
+      {/* <div className={styles["articles-numberLine-container"]}> */}
+      <div className={styles["articles-numberLine"]}>
+        {pageCount > 1 &&
+          Array.from(Array(pageCount).keys()).map((number) => {
+            return (
+              <div
+                className={styles["articles-numberLine-number"]}
+                onClick={() => changePage(number + 1)}
+              >
+                {number + 1}
+              </div>
+            );
+          })}
+      </div>
+      {/* </div> */}
     </div>
   );
 };
@@ -129,19 +172,7 @@ export default ArticlesContainer;
 
 /*  
 
- 1) categories
- 2) article count
- 3) filter options
 
-
-need to get the categories from the posts and then display them in the select box
-  map through and make an array of all of the categories and no duplicates
-
-
-
-filter articles based off of selection
-put a conditional in the map 
-
-can add an onchange to the select box and then set the state of the category to the value of the select box
+  
 
 */

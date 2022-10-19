@@ -12,6 +12,7 @@
 }
 
 .main-articles-filter-container {
+  background-color: $tertiary;
   background-color: $secondary;
   border-radius: 10px;
   box-shadow: $box-shadow;
@@ -19,20 +20,19 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5%;
-  padding: 0.5rem 2rem;
-  font-size: clamp(1rem, 1.25vw, 1.25vw);
+  padding: 0.25rem 2rem;
+  font-size: clamp(1rem, 1.15vw, 1.25vw);
   color: $primary;
 }
 
 .filter-container-categories {
   select {
-    background-color: black;
+    background-color: $primary;
     border: none;
     box-shadow: $box-shadow;
-    // color: $secondary;
-    color: $primary;
-    font-size: clamp(1rem, 1.25vw, 1.25vw);
-    padding: 0.5rem 1rem;
+    color: $secondary;
+    font-size: clamp(1rem, 1.15vw, 1.25vw);
+    padding: 0.25rem 1rem;
     border-radius: 10px;
     outline: none;
     width: 100%;
@@ -43,6 +43,21 @@
       &:hover {
       }
     }
+  }
+}
+
+.articles-numberLine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.25rem 1rem;
+  font-size: clamp(1rem, 1vw, 1vw);
+  color: $secondary;
+
+  .articles-numberLine-number {
+    padding: 0 0.5rem;
+    cursor: pointer;
   }
 }
 
