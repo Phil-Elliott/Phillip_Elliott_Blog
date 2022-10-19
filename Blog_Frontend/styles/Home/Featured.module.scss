@@ -38,6 +38,7 @@
   }
   button {
     background-color: $secondary;
+    box-shadow: $box-shadow-light;
     border: none;
     border-radius: 3px;
     color: $primary;
@@ -59,6 +60,7 @@
 
   img {
     object-fit: cover;
+    border-radius: 3px;
   }
 }
 

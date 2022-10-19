@@ -4,8 +4,6 @@ import Footer from "./Footer/Footer";
 import styles from "./../styles/Layout.module.scss";
 
 const Layout = ({ children }) => {
-  console.log(children);
-
   let changeModalDisplay;
   children[1].props.changeModalDisplay
     ? (changeModalDisplay = children[1].props.changeModalDisplay)

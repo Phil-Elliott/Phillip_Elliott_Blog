@@ -27,8 +27,8 @@ const HeaderNav = () => {
       <ul>
         {NavLinks.map((link) => {
           return (
-            <Link href={link.path}>
-              <li key={link.name}>{link.name}</li>
+            <Link href={link.path} key={link.name}>
+              <li>{link.name}</li>
             </Link>
           );
         })}

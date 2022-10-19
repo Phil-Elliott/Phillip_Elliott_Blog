@@ -21,6 +21,7 @@ const PageIndex = ({ changePage, pageCount, pageNumber }) => {
                   style={number + 1 === pageNumber ? { color: "#d05a49" } : {}}
                   className={styles["articles-numberLine-number"]}
                   onClick={() => changePage(pageNumber + 1)}
+                  key={number + 1}
                 >
                   {number + 1}
                 </div>
