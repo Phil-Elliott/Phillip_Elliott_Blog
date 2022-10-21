@@ -14,11 +14,33 @@ const ArticlesContainer = (posts) => {
   const [count, setCount] = useState(posts.posts.length);
   const [pageCount, setPageCount] = useState(1);
   const [pageNumber, setPageNumber] = useState(1);
+  // const [search, setSearch] = useState("");
+  // const [searchedPosts, setSearchedPosts] = useState([]);
 
+  // stores the search input
+  // const searchPosts = (search) => {
+  //   setSearch(search.target.value);
+  // };
+
+  // search through filtered posts
+  // useEffect(() => {
+  //   const filtered = filteredPosts.filter((post) => {
+  //     return post.title.toLowerCase().includes(search.toLowerCase());
+  //   });
+
+  //   setSearchedPosts(filtered);
+  //   setPageNumber(1);
+  // }, [search]);
+
+  // stores the posts to be displayed
+  // const displayPosts = search.length ? searchedPosts : filteredPosts;
+
+  // get all categories
   useEffect(() => {
     setCategories(getCategories(posts.posts));
   }, []);
 
+  // sort posts
   useEffect(() => {
     setSortedPosts(sortPosts(categories, posts));
   }, [categories]);
@@ -59,7 +81,6 @@ const ArticlesContainer = (posts) => {
 
   // Changes the page number
   const changePage = (number) => {
-    console.log(number, pageNumber);
     if (number !== pageNumber) {
       setPageNumber(number);
       goToTop();
@@ -74,6 +95,7 @@ const ArticlesContainer = (posts) => {
         categories={categories}
         changeCategory={changeCategory}
         display={display}
+        // searchPosts={searchPosts}
       />
       <div className={styles["home-popular-articles-container"]}>
         {filteredPosts.map((post, index) => {
@@ -164,6 +186,9 @@ export default ArticlesContainer;
 
 /*  
 
+could put a search bar in here for now 
+- will have to search through the current filtered posts 
+- will have to make a new function to search through the posts
 
   
 

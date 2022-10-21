@@ -10,7 +10,7 @@ export const getCategories = (posts) => {
       });
     }
   });
-  return categories;
+  return categories.sort();
 };
 
 // Sorts the articles by category
