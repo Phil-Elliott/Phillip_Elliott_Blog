@@ -35,7 +35,7 @@ const SubscribeModal = ({ changeModalDisplay, displayModal }) => {
       role="dialog"
       aria-labelledby="subscribeModalLabel"
       aria-hidden="true"
-      // onClick={() => changeModalDisplay()}
+      onClick={() => changeModalDisplay()}
     >
       <div
         className={styles["modal-dialog"]}
@@ -91,6 +91,8 @@ const SubscribeModal = ({ changeModalDisplay, displayModal }) => {
               </div> */}
               <button
                 type="submit"
+                value=""
+                name="subscribe"
                 className={styles["modal-form-submit-button"]}
                 // onClick={() => changeModalDisplay()}
               >

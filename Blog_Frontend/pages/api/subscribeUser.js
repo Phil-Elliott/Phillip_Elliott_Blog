@@ -1,11 +1,14 @@
 import fetch from "isomorphic-unfetch";
 
 export default async (req, res) => {
+  debugger;
   const { email } = req.body;
 
   console.log({ email });
+  console.log("poop");
 
   if (!email) {
+    console.log("no email");
     return res.status(400).json({ error: "Email is required" });
   }
 

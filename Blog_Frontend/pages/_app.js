@@ -7,7 +7,6 @@ function MyApp({ Component, pageProps }) {
   const [displayModal, setDisplayModal] = useState(false);
 
   const changeModalDisplay = () => {
-    console.log("baby");
     setDisplayModal(!displayModal);
   };
 

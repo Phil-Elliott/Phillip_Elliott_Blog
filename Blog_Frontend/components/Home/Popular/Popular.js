@@ -42,7 +42,6 @@ const featuredArticles = [
 ];
 
 const Popular = (posts) => {
-  console.log(posts);
   return (
     <section className={styles["home-popular-container"]}>
       <h1 className={styles["home-section-header"]}>Popular</h1>

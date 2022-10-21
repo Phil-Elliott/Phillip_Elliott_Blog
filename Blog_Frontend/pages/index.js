@@ -38,9 +38,3 @@ export async function getStaticProps({ preview = false }) {
 }
 
 export default Home;
-
-/*
-2) Have modal come down from top 
-
-
-*/
