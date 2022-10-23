@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./../../styles/Articles.module.scss";
+import styles from "./../../styles/Pages/Articles/Articles.module.scss";
 
 const Filter = ({ categories, changeCategory, display, searchPosts }) => {
   return (

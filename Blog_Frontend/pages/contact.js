@@ -1,10 +1,10 @@
 import React from "react";
 import { Meta } from "../components/Meta";
-import styles from "./../styles/About.module.scss";
+import styles from "./../styles/Pages/Info/Info.module.scss";
 
 const Contact = () => {
   return (
-    <div className={styles["about-container"]}>
+    <div className={styles["info-container"]}>
       <Meta title="Contact" />
       <div>
         <h1>Contact Us</h1>

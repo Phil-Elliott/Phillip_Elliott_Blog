@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./../../../styles/Header/HamburgerIcon.module.scss";
+import styles from "./../../../styles/Components/Header/HamburgerIcon.module.scss";
 
 const HamburgerIcon = ({ setIsOpen, isOpen }) => {
   return (

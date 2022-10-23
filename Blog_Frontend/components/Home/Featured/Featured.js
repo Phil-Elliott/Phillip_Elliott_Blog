@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
 import { getClient } from "../../../lib/sanity.server";
-import styles from "./../../../styles/Home/Featured.module.scss";
+import styles from "./../../../styles/Pages/Home/Featured/Featured.module.scss";
 
 const Featured = (post) => {
   const imageProps = useNextSanityImage(getClient(), post.post.mainImage);

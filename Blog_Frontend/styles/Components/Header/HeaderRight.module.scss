@@ -1,0 +1,23 @@
+@use "../../abstracts" as *;
+
+.header-right-container {
+  button {
+    background-color: $primary;
+    border: none;
+    border-radius: 3px;
+    color: $secondary;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: $transistion-ease;
+    box-shadow: $box-shadow-light;
+
+    &:hover {
+      cursor: pointer;
+
+      background-color: $secondary;
+      color: $primary;
+      box-shadow: $box-shadow;
+    }
+  }
+}

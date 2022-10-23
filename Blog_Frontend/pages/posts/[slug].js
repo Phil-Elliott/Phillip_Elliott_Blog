@@ -7,7 +7,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { useNextSanityImage } from "next-sanity-image";
 import { getClient } from "../../lib/sanity.server";
 import Moment from "react-moment";
-import styles from "./../../styles/Article.module.scss";
+import styles from "./../../styles/Pages/Article/Article.module.scss";
 import { atomOneDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 const PostComponents = {

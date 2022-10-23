@@ -1,0 +1,12 @@
+@use "../../abstracts" as *;
+.home-container {
+  color: $secondary;
+  background-color: $primary;
+  padding-block: 9vh 5vh;
+}
+
+@media only screen and (max-width: 1000px) {
+  .home-container {
+    padding-block: 13vh 5vh;
+  }
+}

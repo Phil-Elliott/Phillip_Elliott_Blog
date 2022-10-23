@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
 import { getClient } from "../../../../lib/sanity.server";
 import { urlFor } from "../../../../lib/sanity";
-import styles from "./../../../../styles/Home/Latest/SliderArticle.module.scss";
+import styles from "./../../../../styles/Pages/Home/Latest/SliderArticle.module.scss";
 
 const SliderArticle = ({ title, image, slug }) => {
   const imageProps = useNextSanityImage(getClient(), image);

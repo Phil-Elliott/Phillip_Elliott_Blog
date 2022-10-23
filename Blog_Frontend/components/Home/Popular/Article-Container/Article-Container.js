@@ -5,7 +5,7 @@ import { useNextSanityImage } from "next-sanity-image";
 import { getClient } from "../../../../lib/sanity.server";
 import { urlFor } from "../../../../lib/sanity";
 import { PortableText } from "@portabletext/react";
-import styles from "./../../../../styles/Home/Popular/ArticleContainer.module.scss";
+import styles from "./../../../../styles/Pages/Home/Popular/ArticleContainer.module.scss";
 import Moment from "react-moment";
 
 const ArticleContainer = ({

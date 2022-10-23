@@ -1,7 +1,7 @@
 import React from "react";
 // import "./Popular.scss";
 import ArticleContainer from "./Article-Container/Article-Container";
-import styles from "./../../../styles/Home/Popular/Popular.module.scss";
+import styles from "./../../../styles/Pages/Home/Popular/Popular.module.scss";
 
 const featuredArticles = [
   {

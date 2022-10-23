@@ -5,7 +5,7 @@ import { getCategories, sortPosts } from "../components/Articles/functions";
 import { Meta } from "../components/Meta";
 import { getClient } from "../lib/sanity.server";
 import groq from "groq";
-import styles from "./../styles/Articles.module.scss";
+import styles from "./../styles/Pages/Articles/Articles.module.scss";
 
 const ArticlesContainer = (posts) => {
   const [categories, setCategories] = useState([]);

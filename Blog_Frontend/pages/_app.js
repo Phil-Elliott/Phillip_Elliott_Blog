@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
-import SubscribeModal from "../components/Subscribe-Modal";
+import SubscribeModal from "../components/SubscribeModal/SubscribeModal";
 import "../styles/globals.scss";
 
 function MyApp({ Component, pageProps }) {

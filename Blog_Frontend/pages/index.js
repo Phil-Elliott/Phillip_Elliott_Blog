@@ -2,7 +2,7 @@ import { Featured, Popular, Latest } from "../components/Home/index";
 import { Meta } from "../components/Meta";
 import { getClient } from "../lib/sanity.server";
 import groq from "groq";
-import styles from "./../styles/Home/Home.module.scss";
+import styles from "./../styles/Pages/Home/Home.module.scss";
 
 const Home = ({ posts }) => {
   return (

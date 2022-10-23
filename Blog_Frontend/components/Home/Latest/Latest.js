@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SliderArticle from "./Slider-Article/Slider-Article";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import styles from "./../../../styles/Home/Latest/Latest.module.scss";
+import styles from "./../../../styles/Pages/Home/Latest/Latest.module.scss";
 
 const Latest = (posts) => {
   return (

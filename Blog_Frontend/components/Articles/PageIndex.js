@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./../../styles/Articles.module.scss";
+import styles from "./../../styles/Pages/Articles/Articles.module.scss";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const PageIndex = ({ changePage, pageCount, pageNumber }) => {
