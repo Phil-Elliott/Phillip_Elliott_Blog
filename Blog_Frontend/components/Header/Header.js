@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { HeaderName, HeaderNav, HeaderRight, HamburgerIcon } from "./index";
-import styles from "./../../styles/Components/Header/Header.module.scss";
+import styles from "./../../styles/layout/Header/Header.module.scss";
 
 const Header = ({ changeModalDisplay }) => {
   const [isOpen, setIsOpen] = useState(false);

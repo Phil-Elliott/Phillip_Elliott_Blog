@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import styles from "./../../../styles/Components/Header/HeaderNav.module.scss";
+import styles from "./../../../styles/layout/Header/HeaderNav.module.scss";
 
 const NavLinks = [
   {

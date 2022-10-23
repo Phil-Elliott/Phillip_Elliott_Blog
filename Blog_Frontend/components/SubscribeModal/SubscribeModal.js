@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import styles from "../../styles/Components/SubscribeModal/SubscribeModal.module.scss";
+import styles from "../../styles/components/SubscribeModal/SubscribeModal.module.scss";
 
 const SubscribeModal = ({ changeModalDisplay, displayModal }) => {
   const inputRef = useRef(null);

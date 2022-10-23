@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import styles from "./../../styles/Components/Footer/Footer.module.scss";
+import styles from "./../../styles/layout/Footer/Footer.module.scss";
 
 const NavLinks = [
   {

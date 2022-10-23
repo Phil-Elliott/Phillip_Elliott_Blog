@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import styles from "./../../../styles/Components/Header/HeaderRight.module.scss";
+import styles from "./../../../styles/layout/Header/HeaderRight.module.scss";
 
 const HeaderRight = ({ changeModalDisplay }) => {
   return (
