@@ -1,97 +1,51 @@
 import { Meta } from "../../components/Meta";
 import groq from "groq";
 import { PortableText } from "@portabletext/react";
-import { urlFor } from "../../lib/sanity";
 import Image from "next/image";
-import SyntaxHighlighter from "react-syntax-highlighter";
+import PostComponents from "../../components/Article/PostComponents";
+import Content from "../../components/Article/Content";
 import { useNextSanityImage } from "next-sanity-image";
 import { getClient } from "../../lib/sanity.server";
 import Moment from "react-moment";
-import styles from "./../../styles/Pages/Article/Article.module.scss";
-import { atomOneDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import styles from "./../../styles/Pages/Article/MainContainer.module.scss";
+import PopularContainer from "../../components/Article/PopularContainer/PopularContainer";
 
-const PostComponents = {
-  types: {
-    image: ({ value }) => {
-      return (
-        <img
-          className={styles["post-image"]}
-          alt={value.alt || " "}
-          src={urlFor(value)}
-        />
-      );
-    },
-    code: ({ value }) => {
-      return (
-        <div className={styles["code-image-container"]}>
-          <SyntaxHighlighter
-            className={styles["code-image"]}
-            wrapLines={true}
-            wrapLongLines={true}
-            language={value.language}
-            style={atomOneDark}
-            // showInlineLineNumbers={true}
-            // showLineNumbers
-            lineProps={{
-              style: {
-                // wordBreak: "break-all",
-                // whiteSpace: "pre-wrap",
-              },
-            }}
-            // codeTagProps={{ style: { fontSize: "inherit" } }}
-            // customStyle={{ fontSize: 18 }}
-            lineNumberStyle={{
-              padding: "0 5px 0 0",
-              // fontSize: 14,
-              borderRight: "1.5px solid darkgray",
-              marginRight: "10px",
-            }}
-          >
-            {value.code}
-          </SyntaxHighlighter>
-        </div>
-      );
-    },
-  },
-};
-
-const Post = ({ post }) => {
-  // console.log(post);
-  const imageProps = post && useNextSanityImage(getClient(), post.mainImage);
-  const authorImageProps =
-    post && useNextSanityImage(getClient(), post.authorImage);
+const Post = ({ post, posts }) => {
   return (
-    <div className={styles["article-container"]}>
-      {post && <Meta title={post.title} />}
-      {post && (
-        <article>
-          <h1>{post.title}</h1>
-          <div className={styles["article-author-container"]}>
-            <div className={styles["article-author-image-container"]}>
-              <Image {...authorImageProps} alt="Featured Image" />
-            </div>
-            <h3 style={{ color: "rgba(26, 28, 26, 0.9)" }}>
-              Phil Elliott |{" "}
-              <Moment format="MM/DD/YYYY">{post.publishedAt}</Moment>
-            </h3>
-          </div>
-          <div className={styles["main-img"]}>
-            <Image {...imageProps} alt="Featured Image" layout="fill" />
-          </div>
-          <div className={styles["article-content"]}>
-            <PortableText value={post.body} components={PostComponents} />
-          </div>
-        </article>
-      )}
+    <div className={styles["main-article-container"]}>
+      <Content post={post} />
+      <PopularContainer posts={posts} />
     </div>
   );
 };
+
+// export async function getStaticProps({ preview = false }) {
+//   const posts = await getClient(preview).fetch(groq`
+//       *[_type == "post" ] | order(publishedAt desc) {
+//         _id,
+//         title,
+//         "username": author->username,
+//         // "categories": categories[]->{id, title}
+//         "authorImage": author->image,
+//         body,
+//         mainImage,
+//         slug,
+//         publishedAt,
+//         // categories
+//         categories[]->{id, title}
+//       }
+//       `);
+//   return {
+//     props: {
+//       posts,
+//     },
+//   };
+// }
 
 const query = groq`*[_type == "post" && slug.current == $slug][0] {
       title,
       "username": author->name,
       "authorImage": author->image,
-      
       body,
       mainImage, 
       publishedAt, 
@@ -111,12 +65,46 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params, preview = false }) {
   const post = await getClient(preview).fetch(query, { slug: params.slug });
-
+  const posts = await getClient(preview).fetch(groq`
+        *[_type == "post" ] | order(publishedAt desc) { 
+          _id,
+          title,
+          "username": author->username,
+          // "categories": categories[]->{id, title}
+          "authorImage": author->image,
+          body,
+          mainImage, 
+          slug, 
+          publishedAt,
+          // categories
+          categories[]->{id, title}
+        }
+        `);
   return {
     props: {
       post,
+      posts,
     },
   };
 }
 
 export default Post;
+
+/*
+    could create two seperate sections 
+    - one for the article
+    - one for the suggested links 
+
+    Need to populate diffirent data to each 
+    - article will have the article data
+          - Could put the static props in this component 
+    - suggested links will have the popular articles data
+          - Could put the homepage static props in this component
+
+
+
+
+
+
+
+*/
