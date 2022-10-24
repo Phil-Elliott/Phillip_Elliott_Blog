@@ -14,7 +14,7 @@
   }
 
   nav {
-    width: 40%;
+    width: 30%;
     margin: 0 auto;
     ul {
       @extend %flex-between;
@@ -64,7 +64,7 @@
     h1,
     nav,
     p {
-      width: 90%;
+      width: 80%;
     }
     li {
       font-size: clamp(0.7rem, 2.5vw, 2.5vw) !important;
