@@ -14,7 +14,7 @@ const Post = ({ post, posts }) => {
   return (
     <div className={styles["main-article-container"]}>
       <Content post={post} />
-      {/* <PopularContainer posts={posts} currentTitle={post.title} /> */}
+      <PopularContainer posts={posts} currentTitle={post.title} />
     </div>
   );
 };

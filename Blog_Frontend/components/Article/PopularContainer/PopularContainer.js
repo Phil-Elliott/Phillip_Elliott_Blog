@@ -7,7 +7,8 @@ import { getClient } from "../../../lib/sanity.server";
 import styles from "./../../../styles/Pages/Article/Popular.module.scss";
 
 const PopularContainer = ({ posts, currentTitle }) => {
-  let recentPosts = posts.filter((post) => post.title !== currentTitle);
+  let recentPosts =
+    currentTitle && posts.filter((post) => post.title !== currentTitle);
   return (
     <div className={styles["popular-container"]}>
       <div className={styles["popular-articles-container"]}>
@@ -16,11 +17,12 @@ const PopularContainer = ({ posts, currentTitle }) => {
           {/* <span></span> */}
         </div>
         <div className={styles["popular-articles"]}>
-          {recentPosts.map((post, index) => {
-            if (index < 5) {
-              return <ArticleLink key={post._id} post={post} index={index} />;
-            }
-          })}
+          {recentPosts &&
+            recentPosts.map((post, index) => {
+              if (index < 5) {
+                return <ArticleLink key={post._id} post={post} index={index} />;
+              }
+            })}
         </div>
       </div>
     </div>
