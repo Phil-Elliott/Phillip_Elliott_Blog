@@ -14,33 +14,10 @@ const Post = ({ post, posts }) => {
   return (
     <div className={styles["main-article-container"]}>
       <Content post={post} />
-      <PopularContainer posts={posts} />
+      <PopularContainer posts={posts} currentTitle={post.title} />
     </div>
   );
 };
-
-// export async function getStaticProps({ preview = false }) {
-//   const posts = await getClient(preview).fetch(groq`
-//       *[_type == "post" ] | order(publishedAt desc) {
-//         _id,
-//         title,
-//         "username": author->username,
-//         // "categories": categories[]->{id, title}
-//         "authorImage": author->image,
-//         body,
-//         mainImage,
-//         slug,
-//         publishedAt,
-//         // categories
-//         categories[]->{id, title}
-//       }
-//       `);
-//   return {
-//     props: {
-//       posts,
-//     },
-//   };
-// }
 
 const query = groq`*[_type == "post" && slug.current == $slug][0] {
       title,

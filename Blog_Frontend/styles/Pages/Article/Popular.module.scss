@@ -1,24 +1,62 @@
 @use "../../abstracts" as *;
 
-.popular-articles-container {
-  padding-block: 4rem 2rem;
+.popular-container {
+  position: relative;
+}
 
-  h2 {
-    color: $tertiary;
+.popular-articles-container {
+  padding-block: 15%;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 2rem;
+
+  .title {
+    color: $secondary;
     font-weight: 900;
-    font-size: clamp(1.75rem, 2vw, 2vw);
     line-height: 150%;
     padding-bottom: 3rem;
-    margin: 0;
+    h2 {
+      font-size: clamp(1.75rem, 1.75vw, 1.75vw);
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+
+      &:after {
+        position: absolute;
+        top: 51%;
+        width: 50%;
+        height: 1px;
+        content: "\a0";
+        background-color: $border-color;
+        margin-left: 1.5rem;
+      }
+    }
   }
 }
 
 .popular-article {
   padding-block: 1rem;
   display: flex;
+  border-bottom: $border-color 1px solid;
+  cursor: pointer;
+
+  &:hover {
+    .image-container {
+      transition: all 0.25s ease-in-out;
+      margin-left: 5%;
+    }
+    h3 {
+      color: $tertiary;
+    }
+  }
+}
+
+.popular-article-noBorder {
+  border-bottom: none;
 }
 
 .image-container {
+  transition: all 0.25s ease-in-out;
   width: 5rem;
   min-width: 5rem;
   height: 7rem;
@@ -43,7 +81,6 @@
   //   padding-block: 0.25rem;
 
   h3 {
-    cursor: pointer;
     font-size: clamp(1.15rem, 1vw, 1vw);
     font-size: 1rem;
     margin-block: 0;

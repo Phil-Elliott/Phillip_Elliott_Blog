@@ -6,21 +6,26 @@ import { getClient } from "../../../lib/sanity.server";
 import Moment from "react-moment";
 import styles from "./../../../styles/Pages/Article/Popular.module.scss";
 
-const ArticleLink = ({ post }) => {
+const ArticleLink = ({ post, index }) => {
   const imageProps = useNextSanityImage(getClient(), post.mainImage);
   console.log(post);
   return (
-    <div className={styles["popular-article"]}>
-      <div className={styles["image-container"]}>
-        <Image {...imageProps} alt={post.title} layout="fill" />
-      </div>
-      <div className={styles["info-container"]}>
-        <Link href={`/posts/${post.slug.current}`}>
+    <Link href={`/posts/${post.slug.current}`}>
+      <div
+        className={`${styles["popular-article"]} ${
+          index === 4 && styles["popular-article-noBorder"]
+        }
+        `}
+      >
+        <div className={styles["image-container"]}>
+          <Image {...imageProps} alt={post.title} layout="fill" />
+        </div>
+        <div className={styles["info-container"]}>
           <h3>{post.title}</h3>
-        </Link>
-        <Moment format="MM/DD/YYYY">{post.publishedAt}</Moment>
+          <Moment format="MM/DD/YYYY">{post.publishedAt}</Moment>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
