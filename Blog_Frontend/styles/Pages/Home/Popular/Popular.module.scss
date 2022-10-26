@@ -5,12 +5,12 @@
   padding-bottom: 2%;
   font-size: clamp(1.5rem, 1.75vw, 1.75vw);
   align-self: flex-start;
+  margin-top: 0;
 }
 
 .home-popular-container {
   @extend %main-width;
-  // width: 75%;
-  padding-block: 2.5%;
+  padding-top: 4%;
 }
 
 .home-popular-articles-container {

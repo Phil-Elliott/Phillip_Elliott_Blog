@@ -6,9 +6,14 @@ import { getClient } from "../../../../lib/sanity.server";
 import { urlFor } from "../../../../lib/sanity";
 import styles from "./../../../../styles/Pages/Home/Latest/SliderArticle.module.scss";
 
-const SliderArticle = ({ title, image, slug }) => {
+const SliderArticle = ({ title, image, slug, description }) => {
   const imageProps = useNextSanityImage(getClient(), image);
-  const shortTitle = title.length > 25 ? title.slice(0, 25) + "..." : title;
+  // const shortTitle = title.length > 25 ? title.slice(0, 25) + "..." : title;
+  const newDescription = description[0].children[0].text;
+  const shortDescription =
+    newDescription.length > 190
+      ? newDescription.slice(0, 190) + "..."
+      : newDescription;
 
   return (
     <Link
@@ -19,7 +24,11 @@ const SliderArticle = ({ title, image, slug }) => {
       <div className={styles["home-latest-article"]}>
         <div className={styles["home-latest-article-image"]}>
           <Image {...imageProps} alt="fun image for article" layout="fill" />
-          <h2 title={title}>{shortTitle}</h2>
+          <div className={styles["image-content-container"]}>
+            <h2 title={title}>{title}</h2>
+            <p>{shortDescription}</p>
+            <button>Read</button>
+          </div>
         </div>
       </div>
     </Link>

@@ -6,17 +6,7 @@ import styles from "./../../../styles/Pages/Home/Latest/Latest.module.scss";
 const Latest = (posts) => {
   return (
     <section className={styles["home-latest-container"]}>
-      {/* <h1 className={styles["home-section-header"]}></h1> */}
       <div className={styles["home-latest-slider-container"]}>
-        {/* <FaChevronLeft
-          className={styles["slider-chevron"]}
-          // className={
-          //   currentArticle > 0
-          //     ? "slider-chevron"
-          //     : "slider-chevron slider-chevron-hide"
-          // }
-          // onClick={() => slideLeft()}
-        /> */}
         <div className={styles["home-latest-slider-articles"]}>
           {posts.posts.map((post, index) => {
             if (index > 0 && index < 4) {
@@ -26,74 +16,15 @@ const Latest = (posts) => {
                   title={post.title}
                   image={post.mainImage}
                   slug={post.slug}
+                  description={post.body}
                 />
               );
             }
           })}
         </div>
-        {/* <FaChevronRight
-          className={styles["slider-chevron"]}
-          // className={
-          //   currentArticle > 0
-          //     ? "slider-chevron"
-          //     : "slider-chevron slider-chevron-hide"
-          // }
-          // onClick={() => slideLeft()}
-        /> */}
       </div>
     </section>
   );
 };
 
 export default Latest;
-
-/*
-
-  Make the image containers in viewports and display each one 
-  MAybe have a max width for the articles container 
-  When you click 
-    - 
-
-  could change file structre 
-  use two maps
-  use npm for slider
-*/
-// const [currentArticle, setCurrentArticle] = useState(0)
-
-// const slideLeft = () => {
-//   if (currentArticle > 0) {
-//     setCurrentArticle((prevArticle) => prevArticle - 1)
-//   }
-// }
-
-// const slideRight = () => {
-//   if (currentArticle < 2) {
-//     setCurrentArticle((prevArticle) => prevArticle + 1)
-//   }
-// }
-{
-  /* <FaChevronLeft
-          className={
-            currentArticle > 0
-              ? "slider-chevron"
-              : "slider-chevron slider-chevron-hide"
-          }
-          onClick={() => slideLeft()}
-        /> */
-}
-
-// let min = currentArticle * 3
-// let max = min + 3
-// if (index >= min && index < max) {
-// }
-
-{
-  /* <FaChevronRight
-          className={
-            currentArticle < 2
-              ? "slider-chevron"
-              : "slider-chevron slider-chevron-hide"
-          }
-          onClick={() => slideRight()}
-        /> */
-}

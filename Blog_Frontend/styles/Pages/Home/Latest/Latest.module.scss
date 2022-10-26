@@ -10,10 +10,8 @@
 
 .home-latest-container {
   border-bottom: 1px solid $border-color;
-  padding-bottom: 3%;
-  // background-color: $secondary;
+  padding-bottom: 4%;
   color: $primary;
-  // background-color: #4e4e50;
 
   h1 {
     @extend %main-width;
@@ -48,7 +46,7 @@
 
 @media only screen and (max-width: 1000px) {
   .home-latest-container {
-    padding-bottom: 0%;
+    border-bottom: none;
     h1 {
       width: 90%;
     }
