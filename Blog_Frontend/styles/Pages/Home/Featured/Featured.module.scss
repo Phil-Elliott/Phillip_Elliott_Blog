@@ -11,24 +11,26 @@
   // height: 40vh;
   cursor: pointer;
   @extend %grid-two-columns;
+  gap: 5%;
 }
 
 .home-section-header {
   color: $tertiary;
-  // padding-bottom: 2%;
   margin: 0;
   font-size: clamp(1.5rem, 1.75vw, 1.75vw);
   align-self: flex-start;
+  // padding-bottom: 2%;
+  font-weight: 600;
 }
 
 .home-featured-left-container {
   @extend %flex-column-justify;
 
   h2 {
-    font-weight: 900;
+    font-weight: 600;
     font-size: clamp(1.5rem, 2.25vw, 2.25vw);
     line-height: 150%;
-    padding-bottom: 1.5rem;
+    padding-block: 1.5rem;
     margin: 0;
   }
   p {
@@ -50,6 +52,7 @@
     font-weight: 500;
     padding: 0.5rem 1rem;
     transition: $transistion-ease;
+    // margin-bottom: 1.5rem;
 
     &:hover {
       cursor: pointer;
@@ -62,6 +65,7 @@
 .home-featured-right-container {
   position: relative;
   min-height: 45vh;
+  height: 100%;
 
   img {
     object-fit: cover;
@@ -81,8 +85,17 @@
   }
   .home-featured-left-container {
     order: 1;
+    h2 {
+      padding-block: 0%;
+    }
+    p {
+      padding-bottom: 0%;
+    }
   }
   .home-featured-right-container {
     height: 45vh;
+  }
+  .home-section-header {
+    padding-bottom: 2%;
   }
 }
