@@ -3,7 +3,8 @@
 .home-featured-container {
   @extend %main-width;
   @extend %flex-column-center;
-  min-height: 88vh;
+  padding-block: 5% 3%;
+  // min-height: 88vh;
 }
 
 .home-featured-article-container {
@@ -14,7 +15,8 @@
 
 .home-section-header {
   color: $tertiary;
-  padding-bottom: 2%;
+  // padding-bottom: 2%;
+  margin: 0;
   font-size: clamp(1.5rem, 1.75vw, 1.75vw);
   align-self: flex-start;
 }
@@ -32,15 +34,17 @@
   p {
     color: $light-color;
     font-size: 1.15rem;
+    font-size: clamp(1rem, 1.15vw, 1.15vw);
     font-weight: 400;
     line-height: 1.9rem;
+    line-height: 180%;
     padding-bottom: 2.5rem;
   }
   button {
     background-color: $secondary;
     box-shadow: $box-shadow-light;
     border: none;
-    border-radius: 3px;
+    border-radius: $border-radius;
     color: $primary;
     font-size: 1rem;
     font-weight: 500;
@@ -49,7 +53,8 @@
 
     &:hover {
       cursor: pointer;
-      opacity: 0.8;
+      // opacity: 0.8;
+      background-color: $tertiary;
     }
   }
 }

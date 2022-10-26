@@ -23,6 +23,12 @@ const ArticleContainer = ({
   const imageProps = useNextSanityImage(getClient(), image);
   const authorImageProps = useNextSanityImage(getClient(), authorImage);
 
+  const newDescription = description[0].children[0].text;
+  const shortDescription =
+    newDescription.length > 190
+      ? newDescription.slice(0, 190) + "..."
+      : newDescription;
+
   return (
     <Link
       href="/posts/[slug]"
@@ -39,7 +45,8 @@ const ArticleContainer = ({
           }
         >
           <h1>{title}</h1>
-          <PortableText value={description[0]} />
+          {/* <PortableText value={description[0]} /> */}
+          <p>{shortDescription}</p>
           <div className={styles["author-container"]}>
             <div className={styles["author-image-container"]}>
               <Image

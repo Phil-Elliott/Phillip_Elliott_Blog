@@ -6,8 +6,17 @@ import styles from "./../../../styles/Pages/Home/Latest/Latest.module.scss";
 const Latest = (posts) => {
   return (
     <section className={styles["home-latest-container"]}>
-      <h1 className={styles["home-section-header"]}>Latest</h1>
+      {/* <h1 className={styles["home-section-header"]}></h1> */}
       <div className={styles["home-latest-slider-container"]}>
+        {/* <FaChevronLeft
+          className={styles["slider-chevron"]}
+          // className={
+          //   currentArticle > 0
+          //     ? "slider-chevron"
+          //     : "slider-chevron slider-chevron-hide"
+          // }
+          // onClick={() => slideLeft()}
+        /> */}
         <div className={styles["home-latest-slider-articles"]}>
           {posts.posts.map((post, index) => {
             if (index > 0 && index < 4) {
@@ -22,6 +31,15 @@ const Latest = (posts) => {
             }
           })}
         </div>
+        {/* <FaChevronRight
+          className={styles["slider-chevron"]}
+          // className={
+          //   currentArticle > 0
+          //     ? "slider-chevron"
+          //     : "slider-chevron slider-chevron-hide"
+          // }
+          // onClick={() => slideLeft()}
+        /> */}
       </div>
     </section>
   );

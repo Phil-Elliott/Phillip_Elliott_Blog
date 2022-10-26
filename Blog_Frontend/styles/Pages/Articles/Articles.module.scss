@@ -15,7 +15,7 @@
 .main-articles-filter-container {
   background-color: $tertiary;
   background-color: $secondary;
-  border-radius: 10px;
+  border-radius: $border-radius;
   box-shadow: $box-shadow;
   display: flex;
   justify-content: space-between;

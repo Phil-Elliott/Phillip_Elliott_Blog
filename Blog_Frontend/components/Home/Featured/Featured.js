@@ -7,6 +7,9 @@ import styles from "./../../../styles/Pages/Home/Featured/Featured.module.scss";
 
 const Featured = (post) => {
   const imageProps = useNextSanityImage(getClient(), post.post.mainImage);
+  const description = post.post.body[0].children[0].text;
+  const shortDescription =
+    description.length > 205 ? description.slice(0, 205) + "..." : description;
 
   return (
     <section className={styles["home-featured-container"]}>
@@ -24,7 +27,8 @@ const Featured = (post) => {
         <div className={styles["home-featured-article-container"]}>
           <div className={styles["home-featured-left-container"]}>
             <h2>{post.post.title}</h2>
-            <PortableText value={post.post.body[0]} />
+            {/* <PortableText value={shortDescription} /> */}
+            <p>{shortDescription}</p>
             <div>
               <button type="button" name="Read Article Button">
                 Read Now

@@ -8,7 +8,7 @@ import styles from "./../../../../styles/Pages/Home/Latest/SliderArticle.module.
 
 const SliderArticle = ({ title, image, slug }) => {
   const imageProps = useNextSanityImage(getClient(), image);
-  const shortTitle = title.length > 30 ? title.slice(0, 30) + "..." : title;
+  const shortTitle = title.length > 25 ? title.slice(0, 25) + "..." : title;
 
   return (
     <Link
@@ -19,8 +19,8 @@ const SliderArticle = ({ title, image, slug }) => {
       <div className={styles["home-latest-article"]}>
         <div className={styles["home-latest-article-image"]}>
           <Image {...imageProps} alt="fun image for article" layout="fill" />
+          <h2 title={title}>{shortTitle}</h2>
         </div>
-        <h2 title={title}>{shortTitle}</h2>
       </div>
     </Link>
   );

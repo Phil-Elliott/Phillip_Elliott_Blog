@@ -44,7 +44,7 @@ const featuredArticles = [
 const Popular = (posts) => {
   return (
     <section className={styles["home-popular-container"]}>
-      <h1 className={styles["home-section-header"]}>Popular</h1>
+      <h1 className={styles["home-section-header"]}>Recent Posts</h1>
       <div className={styles["home-popular-articles-container"]}>
         {posts.posts.map((post, index) => {
           if (index > 3 && index < 9) {

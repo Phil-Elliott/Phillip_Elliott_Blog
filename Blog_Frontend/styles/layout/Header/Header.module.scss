@@ -2,11 +2,12 @@
 
 .headerContainer {
   background-color: #da564a;
-  box-shadow: $box-shadow-light;
+  // box-shadow: $box-shadow-light;
   position: fixed;
   width: 100%;
   z-index: 100;
   transition: $transistion-ease;
+  // padding: 0.5rem 0;
 }
 
 .headerContentContainer {
