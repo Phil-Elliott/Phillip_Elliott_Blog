@@ -1,9 +1,5 @@
 import React from "react";
 import ArticleLink from "./ArticleLink";
-import Link from "next/link";
-import Image from "next/image";
-import { useNextSanityImage } from "next-sanity-image";
-import { getClient } from "../../../lib/sanity.server";
 import styles from "./../../../styles/Pages/Article/Popular.module.scss";
 
 const PopularContainer = ({ posts, currentTitle }) => {
@@ -14,7 +10,6 @@ const PopularContainer = ({ posts, currentTitle }) => {
       <div className={styles["popular-articles-container"]}>
         <div className={styles.title}>
           <h2>Recent Posts</h2>
-          {/* <span></span> */}
         </div>
         <div className={styles["popular-articles"]}>
           {recentPosts &&

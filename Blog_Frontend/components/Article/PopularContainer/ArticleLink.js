@@ -8,7 +8,6 @@ import styles from "./../../../styles/Pages/Article/Popular.module.scss";
 
 const ArticleLink = ({ post, index }) => {
   const imageProps = useNextSanityImage(getClient(), post.mainImage);
-  console.log(post);
   return (
     <Link href={`/posts/${post.slug.current}`}>
       <div

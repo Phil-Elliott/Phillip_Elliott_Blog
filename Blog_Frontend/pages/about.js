@@ -7,7 +7,7 @@ const About = () => {
     <div className={styles["info-container"]}>
       <Meta title="About" />
       <div>
-        <h1>About Us</h1>
+        <h1>About</h1>
         <h2>Content that helps you learn and grow</h2>
         <p>
           Learning how to program often comes with a lot of new, daunting

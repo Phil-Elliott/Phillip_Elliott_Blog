@@ -7,7 +7,7 @@ const Contact = () => {
     <div className={styles["info-container"]}>
       <Meta title="Contact" />
       <div>
-        <h1>Contact Us</h1>
+        <h1>Contact</h1>
         <h2>Reaching Out</h2>
         <p>
           Thank you for reading my blog. If you have any comments or suggestions
