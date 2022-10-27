@@ -2,7 +2,7 @@
 
 .headerContainer {
   background-color: #da564a;
-  // box-shadow: $box-shadow-light;
+  box-shadow: $box-shadow-light;
   position: fixed;
   width: 100%;
   z-index: 100;
@@ -15,6 +15,7 @@
   position: relative;
   width: 100%;
   z-index: 10;
+  padding: 0.5rem 0;
 }
 
 .hiddenHeader {
@@ -41,7 +42,7 @@
 
 .headerResponsiveLinksContainer {
   @extend %main-width;
-  padding-block: 0.5rem;
+  // padding-block: 0.25rem;
 
   ul {
     padding-left: 0;

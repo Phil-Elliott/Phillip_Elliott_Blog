@@ -4,11 +4,9 @@
   @extend %main-width;
   @extend %flex-column-center;
   padding-block: 5% 3%;
-  // min-height: 88vh;
 }
 
 .home-featured-article-container {
-  // height: 40vh;
   cursor: pointer;
   @extend %grid-two-columns;
   gap: 5%;
@@ -19,12 +17,12 @@
   margin: 0;
   font-size: clamp(1.5rem, 1.75vw, 1.75vw);
   align-self: flex-start;
-  // padding-bottom: 2%;
   font-weight: 600;
 }
 
 .home-featured-left-container {
   @extend %flex-column-justify;
+  padding-block: 7.5%;
 
   h2 {
     font-weight: 600;
@@ -64,8 +62,8 @@
 
 .home-featured-right-container {
   position: relative;
-  min-height: 45vh;
-  height: 100%;
+  // min-height: 45vh;
+  // height: 100%;
 
   img {
     object-fit: cover;
@@ -84,6 +82,7 @@
     gap: 5%;
   }
   .home-featured-left-container {
+    padding-block: 0;
     order: 1;
     h2 {
       padding-block: 0%;

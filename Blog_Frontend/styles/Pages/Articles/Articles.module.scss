@@ -2,7 +2,7 @@
 
 .main-articles-container {
   @extend %main-width;
-  padding-block: 15vh 5vh;
+  padding-block: 13vh 5vh;
 
   .main-articles-container-header {
     color: $tertiary;
@@ -84,7 +84,7 @@
 
 @media only screen and (max-width: 1000px) {
   .main-articles-container {
-    // padding-block: 15vh 5vh;
+    padding-block: 11vh 5vh;
     width: 90%;
   }
 
