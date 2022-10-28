@@ -6,9 +6,9 @@
 
   .main-articles-container-header {
     color: $tertiary;
-    padding-bottom: 5%;
     font-size: clamp(1.5rem, 1.75vw, 1.75vw);
     margin-bottom: 0;
+    margin-bottom: clamp(2rem, 5%, 5%);
   }
 }
 
@@ -21,6 +21,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5%;
+  margin-bottom: clamp(2rem, 5%, 5%);
   padding: 0.5% 2%;
   font-size: clamp(1rem, 1.15vw, 1.25vw);
   color: $primary;

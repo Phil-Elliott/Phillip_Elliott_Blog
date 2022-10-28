@@ -36,7 +36,14 @@ const Featured = (post) => {
             </div>
           </div>
           <div className={styles["home-featured-right-container"]}>
-            <Image {...imageProps} alt="Featured Image" layout="fill" />
+            <Image
+              {...imageProps}
+              alt="Featured Image"
+              layout="fill"
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+            />
           </div>
         </div>
       </Link>

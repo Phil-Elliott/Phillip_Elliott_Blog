@@ -60,13 +60,12 @@
   font-size: clamp(0.75rem, 0.9vw, 0.9vw);
 
   .author-image-container {
-    width: 2.5rem;
-    height: 2.5rem;
     width: clamp(1.75rem, 2vw, 2vw);
     height: clamp(1.75rem, 2vw, 2vw);
     border-radius: 100%;
     overflow: hidden;
     margin-right: 1rem;
+    position: relative;
 
     img {
       width: 100%;

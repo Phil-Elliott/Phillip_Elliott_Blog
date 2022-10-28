@@ -5,7 +5,7 @@
   width: 50%;
   @extend %flex-column;
   min-height: 70vh;
-  padding-top: clamp(6rem, 8%, 10%);
+  padding-top: clamp(5rem, 8%, 10%);
   padding-bottom: clamp(3rem, 5%, 5%);
 
   h1 {

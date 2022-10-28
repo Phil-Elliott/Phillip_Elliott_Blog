@@ -53,6 +53,9 @@ const ArticleContainer = ({
                 {...authorImageProps}
                 alt={author}
                 className={styles["author-image"]}
+                layout="fill"
+                // height={100}
+                // width={100}
               />
             </div>
             <h3 style={{ color: "rgba(26, 28, 26, 0.9)" }}>
