@@ -7,20 +7,6 @@
   margin-bottom: 5%;
   height: 100%;
   // overflow: hidden;
-
-  &:hover {
-    .home-popular-article-container-left {
-      box-shadow: $box-shadow;
-      transition: $transistion-ease;
-      scale: 1.01;
-    }
-
-    .home-popular-article-container-right {
-      box-shadow: $box-shadow;
-      transition: $transistion-ease;
-      scale: 1.01;
-    }
-  }
 }
 
 .home-popular-article-container-left {
@@ -102,8 +88,28 @@
   .home-popular-article-container-left {
     border-bottom: none;
     order: 1 !important;
+    transition: none;
   }
   .home-popular-article-container-right {
     height: 20rem;
+    transition: none;
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  .home-popular-article-container {
+    &:hover {
+      .home-popular-article-container-left {
+        box-shadow: $box-shadow;
+        transition: $transistion-ease;
+        scale: 1.01;
+      }
+
+      .home-popular-article-container-right {
+        box-shadow: $box-shadow;
+        transition: $transistion-ease;
+        scale: 1.01;
+      }
+    }
   }
 }
