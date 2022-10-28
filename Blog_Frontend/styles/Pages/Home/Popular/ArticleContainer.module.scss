@@ -6,13 +6,28 @@
   gap: 5%;
   margin-bottom: 5%;
   height: 100%;
-  overflow: hidden;
+  // overflow: hidden;
+
+  &:hover {
+    .home-popular-article-container-left {
+      box-shadow: $box-shadow;
+      transition: $transistion-ease;
+      scale: 1.01;
+    }
+
+    .home-popular-article-container-right {
+      box-shadow: $box-shadow;
+      transition: $transistion-ease;
+      scale: 1.01;
+    }
+  }
 }
 
 .home-popular-article-container-left {
   border-bottom: 1px solid $border-color;
   display: flex;
   flex-direction: column;
+  transition: $transistion-ease;
 
   h1 {
     background-color: $tertiary;
@@ -38,6 +53,7 @@
 }
 
 .home-popular-article-container-right {
+  transition: $transistion-ease;
   height: 100%;
   position: relative;
 

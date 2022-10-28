@@ -3,6 +3,7 @@
 .home-latest-article {
   cursor: pointer;
   position: relative;
+  transition: $transistion-ease;
 
   .home-latest-article-image {
     height: clamp(25rem, 20vw, 25vw);
@@ -12,6 +13,12 @@
       object-fit: cover;
       border-radius: 3px;
     }
+  }
+
+  &:hover {
+    box-shadow: $box-shadow;
+    transition: $transistion-ease;
+    scale: 1.01;
   }
 }
 
