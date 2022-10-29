@@ -7,8 +7,16 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+// module.exports = nextConfig;
 
-// module.exports = {
-
-// };
+module.exports = {
+  nextConfig,
+  async rewrites() {
+    return [
+      {
+        source: "/sitemap.xml",
+        destination: "/api/sitemap",
+      },
+    ];
+  },
+};
