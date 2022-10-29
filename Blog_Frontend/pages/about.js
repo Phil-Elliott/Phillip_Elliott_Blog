@@ -5,7 +5,10 @@ import styles from "./../styles/Pages/Info/Info.module.scss";
 const About = () => {
   return (
     <div className={styles["info-container"]}>
-      <Meta title="About" />
+      <Meta
+        title="About"
+        description="Take a look at what this blog is about and how it will benefit you."
+      />
       <div>
         <h1>About</h1>
         <h2>Content that helps you learn and grow</h2>

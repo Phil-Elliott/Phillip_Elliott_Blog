@@ -5,7 +5,10 @@ import styles from "./../styles/Pages/Info/Info.module.scss";
 const Contact = () => {
   return (
     <div className={styles["info-container"]}>
-      <Meta title="Contact" />
+      <Meta
+        title="Contact"
+        description="Feel free to use this contact information to reach out to me."
+      />
       <div>
         <h1>Contact</h1>
         <h2>Reaching Out</h2>

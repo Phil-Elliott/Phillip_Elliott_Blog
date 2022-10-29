@@ -4,7 +4,10 @@ import styles from "./../styles/Pages/Info/Info.module.scss";
 const privacy = () => {
   return (
     <div className={styles["info-container"]}>
-      <Meta title="Privacy Policy" />
+      <Meta
+        title="Privacy Policy"
+        disclaimer="Please read over the privacy policy for the website."
+      />
       <div>
         <h1>Privacy Policy</h1>
 

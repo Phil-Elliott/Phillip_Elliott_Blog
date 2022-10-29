@@ -4,7 +4,10 @@ import styles from "./../styles/Pages/Info/Info.module.scss";
 const disclaimer = () => {
   return (
     <div className={styles["info-container"]}>
-      <Meta title="Disclaimer" />
+      <Meta
+        title="Disclaimer"
+        disclaimer="Please read over this disclaimer for the website."
+      />
       <div>
         <h1>Disclaimer</h1>
         <h2>Website Disclaimer</h2>

@@ -89,7 +89,10 @@ const ArticlesContainer = (posts) => {
 
   return (
     <div className={styles["main-articles-container"]}>
-      <Meta title="Articles" />
+      <Meta
+        title="Articles"
+        description="I have many articles on a variety of topics. See if there are any that you are interested in learning about."
+      />
       <h1 className={styles["main-articles-container-header"]}>Articles</h1>
       <Filter
         categories={categories}
