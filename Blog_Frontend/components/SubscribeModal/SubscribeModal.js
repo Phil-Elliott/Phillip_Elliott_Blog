@@ -45,7 +45,7 @@ const SubscribeModal = ({ changeModalDisplay, displayModal }) => {
         <div className={styles["modal-content"]}>
           <div className={styles["modal-header"]}>
             <h5 className={styles["modal-title"]} id="subscribeModalLabel">
-              Subscribe to our newsletter
+              Subscribe to my newsletter
             </h5>
             <button
               type="button"
@@ -73,7 +73,7 @@ const SubscribeModal = ({ changeModalDisplay, displayModal }) => {
                   ref={inputRef}
                 />
                 <small id="emailHelp" className={styles["modal-form-text"]}>
-                  We'll never share your email with anyone else.
+                  I'll never share your email with anyone else.
                 </small>
               </div>
               {/* <div className={styles["modal-form-check"]}>

@@ -48,12 +48,12 @@ const ArticlesContainer = (posts) => {
   // Changes the post when an option is select
   const changeCategory = (e) => {
     {
-      if (e.target.value === "All") {
+      if (e === "All") {
         setFilteredPosts(posts.posts);
       } else {
         let filteredPosts = [];
         sortedPosts.map((sortedPost) => {
-          if (sortedPost.category === e.target.value) {
+          if (sortedPost.category === e) {
             filteredPosts = sortedPost.posts;
           }
         });
@@ -193,6 +193,6 @@ could put a search bar in here for now
 - will have to search through the current filtered posts 
 - will have to make a new function to search through the posts
 
-  
+  might need to use other selector on mobile
 
 */
