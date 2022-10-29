@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div className={styles["info-container"]}>
       <Meta
-        title="About"
+        title="About | PEB"
         description="Take a look at what this blog is about and how it will benefit you."
       />
       <div>

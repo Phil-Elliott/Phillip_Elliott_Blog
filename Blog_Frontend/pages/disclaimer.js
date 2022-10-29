@@ -5,7 +5,7 @@ const disclaimer = () => {
   return (
     <div className={styles["info-container"]}>
       <Meta
-        title="Disclaimer"
+        title="Disclaimer | PEB"
         description="Please read over this disclaimer for the website."
       />
       <div>

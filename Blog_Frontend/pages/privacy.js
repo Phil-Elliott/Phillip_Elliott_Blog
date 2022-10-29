@@ -5,7 +5,7 @@ const privacy = () => {
   return (
     <div className={styles["info-container"]}>
       <Meta
-        title="Privacy Policy"
+        title="Privacy Policy | PEB"
         description="Please read over the privacy policy for the website."
       />
       <div>

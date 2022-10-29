@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div className={styles["info-container"]}>
       <Meta
-        title="Contact"
+        title="Contact Me | PEB"
         description="Feel free to use this contact information to reach out to me."
       />
       <div>

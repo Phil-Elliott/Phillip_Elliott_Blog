@@ -7,7 +7,7 @@ import styles from "./../styles/Pages/Home/Home.module.scss";
 const Home = ({ posts }) => {
   return (
     <div className={styles["home-container"]}>
-      <Meta title="Home" />
+      <Meta title="PEB | Web Developer Content" />
       <Featured post={posts[0]} />
       <Latest posts={posts} />
       <Popular posts={posts} />
