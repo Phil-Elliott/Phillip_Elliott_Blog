@@ -1,13 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./../../styles/Pages/Articles/Articles.module.scss";
 import { FaChevronDown } from "react-icons/fa";
 
 const Filter = ({ categories, changeCategory, display, searchPosts }) => {
   const [showContent, setShowContent] = useState(false);
   const [selected, setSelected] = useState("All");
-  const myRef = useRef(null);
-
-  const executeScroll = () => myRef.current.scrollIntoView();
 
   useEffect(() => {
     setShowContent(true);
@@ -17,7 +14,6 @@ const Filter = ({ categories, changeCategory, display, searchPosts }) => {
     changeCategory(category);
     setShowContent(!showContent);
     setSelected(category);
-    executeScroll();
   };
 
   return (
@@ -49,9 +45,7 @@ const Filter = ({ categories, changeCategory, display, searchPosts }) => {
             className={styles.content}
           >
             <ul>
-              <li ref={myRef} onClick={() => changeCategoryHandler("All")}>
-                All
-              </li>
+              <li onClick={() => changeCategoryHandler("All")}>All</li>
               {categories.map((category) => {
                 return (
                   <li
