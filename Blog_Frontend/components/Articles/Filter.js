@@ -16,12 +16,16 @@ const Filter = ({ categories, changeCategory, display, searchPosts }) => {
     setSelected(category);
   };
 
+  const changeCategoryMobile = (category) => {
+    changeCategory(category);
+  };
+
   return (
     <div className={styles["main-articles-filter-container"]}>
       <div className={styles["filter-container-categories"]}>
-        {/* <select
+        <select
           className={styles["filter-container-categories-select"]}
-          onChange={(e) => changeCategory(e)}
+          onChange={(e) => changeCategoryMobile(e.target.value)}
         >
           <option value="All">All</option>
           {categories.map((category) => {
@@ -31,7 +35,7 @@ const Filter = ({ categories, changeCategory, display, searchPosts }) => {
               </option>
             );
           })}
-        </select> */}
+        </select>
         <div className={styles.wrapper}>
           <div
             className={styles["select-btn"]}
@@ -67,9 +71,6 @@ const Filter = ({ categories, changeCategory, display, searchPosts }) => {
 };
 
 export default Filter;
-
-// https://mui.com/material-ui/react-select/
-// use mui for the select box
 
 // Need to have it scroll up
 // Need to drill back and have it in main page so it changes on click outside

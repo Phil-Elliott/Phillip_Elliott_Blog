@@ -14,12 +14,6 @@
       border-radius: 3px;
     }
   }
-
-  &:hover {
-    box-shadow: $box-shadow;
-    transition: $transistion-ease;
-    scale: 1.01;
-  }
 }
 
 .image-content-container {
@@ -77,6 +71,14 @@
 }
 
 @media only screen and (min-width: 650px) {
+  .home-latest-article {
+    &:hover {
+      box-shadow: $box-shadow;
+      transition: $transistion-ease;
+      scale: 1.01;
+    }
+  }
+
   .image-content-container {
     &:hover {
       background-color: $tertiary;
@@ -110,13 +112,14 @@
     padding-bottom: 2rem;
   }
   .image-content-container {
-    box-shadow: $box-shadow;
-
     h2 {
       opacity: 1;
       position: absolute;
       bottom: 0;
     }
+  }
+  .home-latest-article-image {
+    box-shadow: $box-shadow;
   }
 }
 

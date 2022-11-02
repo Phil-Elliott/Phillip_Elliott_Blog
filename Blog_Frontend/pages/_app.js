@@ -23,35 +23,17 @@ function MyApp({ Component, pageProps }) {
 
 export default MyApp;
 
-// useEffect(() => {
-//   setDisplayModal(JSON.parse(localStorage.getItem("subscribed")));
-// }, [localStorage.getItem("subscribed")]);
+/*
+    could add particle effects to images on hover
+    
+    add a search bar 
+      1) add logo to header 
+      2) Make it open and responsive '
+      3) create a search page to display articles
+           - could use some of the same components from articles page
 
-// let local = localStorage.getItem("subscribed");
 
-// useEffect(() => {
-//   if (localStorage.getItem("subscribed") === "false") {
-//     setDisplayModal(true);
-//   } else {
-//     setDisplayModal(false);
-//   }
-//   console.log(displayModal);
-// }, [local]);
 
-// useEffect(() => {
-//   console.log(displayModal);
+    add a comments section 
 
-//   function checkUserData() {
-//     const item = localStorage.getItem("subscribed");
-//     console.log(item);
-//     if (item) {
-//       setDisplayModal(item);
-//     }
-//   }
-
-//   window.addEventListener("storage", checkUserData);
-
-//   return () => {
-//     window.removeEventListener("storage", checkUserData);
-//   };
-// }, []);
+*/

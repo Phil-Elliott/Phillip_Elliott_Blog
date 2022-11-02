@@ -14,26 +14,6 @@ const ArticlesContainer = (posts) => {
   const [count, setCount] = useState(posts.posts.length);
   const [pageCount, setPageCount] = useState(1);
   const [pageNumber, setPageNumber] = useState(1);
-  // const [search, setSearch] = useState("");
-  // const [searchedPosts, setSearchedPosts] = useState([]);
-
-  // stores the search input
-  // const searchPosts = (search) => {
-  //   setSearch(search.target.value);
-  // };
-
-  // search through filtered posts
-  // useEffect(() => {
-  //   const filtered = filteredPosts.filter((post) => {
-  //     return post.title.toLowerCase().includes(search.toLowerCase());
-  //   });
-
-  //   setSearchedPosts(filtered);
-  //   setPageNumber(1);
-  // }, [search]);
-
-  // stores the posts to be displayed
-  // const displayPosts = search.length ? searchedPosts : filteredPosts;
 
   // get all categories
   useEffect(() => {
@@ -90,7 +70,7 @@ const ArticlesContainer = (posts) => {
   return (
     <div className={styles["main-articles-container"]}>
       <Meta
-        title="Articles"
+        title="Articles | PEB"
         description="I have many articles on a variety of topics. See if there are any that you are interested in learning about."
       />
       <h1 className={styles["main-articles-container-header"]}>Articles</h1>
@@ -98,7 +78,6 @@ const ArticlesContainer = (posts) => {
         categories={categories}
         changeCategory={changeCategory}
         display={display}
-        // searchPosts={searchPosts}
       />
       <div className={styles["home-popular-articles-container"]}>
         {filteredPosts.map((post, index) => {

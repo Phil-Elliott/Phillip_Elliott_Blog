@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "./../../../styles/layout/Header/HeaderRight.module.scss";
+import Search from "./Search";
 
 const HeaderRight = ({ changeModalDisplay }) => {
   return (
@@ -11,6 +12,7 @@ const HeaderRight = ({ changeModalDisplay }) => {
       >
         Subscribe
       </button>
+      <Search />
     </div>
   );
 };
