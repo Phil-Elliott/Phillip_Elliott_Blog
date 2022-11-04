@@ -51,11 +51,14 @@ const ArticleContainer = ({
             <div className={styles["author-image-container"]}>
               <Image
                 {...authorImageProps}
-                alt={author}
+                alt="profile image"
                 className={styles["author-image"]}
-                layout="fill"
-                // height={100}
-                // width={100}
+                height={0}
+                width={0}
+                fill
+                sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
               />
             </div>
             <h3 style={{ color: "rgba(26, 28, 26, 0.9)" }}>
@@ -64,7 +67,16 @@ const ArticleContainer = ({
           </div>
         </div>
         <div className={styles["home-popular-article-container-right"]}>
-          <Image {...imageProps} alt="Featured Image" layout="fill" />
+          <Image
+            {...imageProps}
+            alt="Fun image for article"
+            height={0}
+            width={0}
+            fill
+            sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+          />
         </div>
       </div>
     </Link>

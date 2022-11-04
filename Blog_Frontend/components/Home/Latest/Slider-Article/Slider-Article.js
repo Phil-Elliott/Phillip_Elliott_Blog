@@ -23,7 +23,16 @@ const SliderArticle = ({ title, image, slug, description }) => {
     >
       <div className={styles["home-latest-article"]}>
         <div className={styles["home-latest-article-image"]}>
-          <Image {...imageProps} alt="fun image for article" layout="fill" />
+          <Image
+            {...imageProps}
+            alt="fun image for article"
+            height={0}
+            width={0}
+            fill
+            sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+          />
           <div className={styles["image-content-container"]}>
             <h2 title={title}>{title}</h2>
             <p>{shortDescription}</p>
