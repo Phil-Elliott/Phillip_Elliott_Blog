@@ -22,7 +22,7 @@ export const Content = ({ post }) => {
           <h1>{post.title}</h1>
           <div className={styles["article-author-container"]}>
             <div className={styles["article-author-image-container"]}>
-              <Image {...authorImageProps} alt="Featured Image" />
+              <Image {...authorImageProps} alt="Author Image" />
             </div>
             <h3 style={{ color: "rgba(26, 28, 26, 0.9)" }}>
               Phil Elliott |{" "}
@@ -30,7 +30,16 @@ export const Content = ({ post }) => {
             </h3>
           </div>
           <div className={styles["main-img"]}>
-            <Image {...imageProps} alt="Featured Image" layout="fill" />
+            <Image
+              {...imageProps}
+              alt="Main Article Image"
+              height={0}
+              width={0}
+              fill
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+            />
           </div>
           <div className={styles["article-content"]}>
             <PortableText value={post.body} components={PostComponents} />

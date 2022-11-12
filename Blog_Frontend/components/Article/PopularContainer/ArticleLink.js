@@ -17,7 +17,16 @@ const ArticleLink = ({ post, index }) => {
         `}
       >
         <div className={styles["image-container"]}>
-          <Image {...imageProps} alt={post.title} layout="fill" />
+          <Image
+            {...imageProps}
+            alt={post.title}
+            height={0}
+            width={0}
+            fill
+            sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+          />
         </div>
         <div className={styles["info-container"]}>
           <h3>{post.title}</h3>

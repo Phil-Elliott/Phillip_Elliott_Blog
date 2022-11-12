@@ -1,7 +1,7 @@
 import { Meta } from "../../components/Meta";
 import groq from "groq";
 import { PortableText } from "@portabletext/react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import PostComponents from "../../components/Article/PostComponents";
 import Content from "../../components/Article/Content";
 import { useNextSanityImage } from "next-sanity-image";

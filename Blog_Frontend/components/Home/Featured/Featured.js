@@ -39,7 +39,9 @@ const Featured = (post) => {
             <Image
               {...imageProps}
               alt="Featured Image"
-              layout="fill"
+              height={0}
+              width={0}
+              fill
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
