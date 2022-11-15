@@ -46,7 +46,7 @@ const ArticleContainer = ({
         >
           <h1>{title}</h1>
           {/* <PortableText value={description[0]} /> */}
-          <p>{shortDescription}</p>
+          <p className={styles["article-description"]}>{shortDescription}</p>
           <div className={styles["author-container"]}>
             <div className={styles["author-image-container"]}>
               <Image
@@ -61,9 +61,9 @@ const ArticleContainer = ({
               33vw"
               />
             </div>
-            <h3 style={{ color: "rgba(26, 28, 26, 0.9)" }}>
+            <h2 style={{ color: "rgba(26, 28, 26, 0.9)" }}>
               Phil Elliott | <Moment format="MM/DD/YYYY">{publishedAt}</Moment>
-            </h3>
+            </h2>
           </div>
         </div>
         <div className={styles["home-popular-article-container-right"]}>

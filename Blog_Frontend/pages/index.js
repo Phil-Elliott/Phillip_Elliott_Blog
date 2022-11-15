@@ -38,3 +38,11 @@ export async function getStaticProps({ preview = false }) {
 }
 
 export default Home;
+
+/*
+  write articles (2 a week)
+  Figure out mail chimp and what it sends out to nex subscribers
+
+
+
+*/

@@ -73,6 +73,7 @@ const search = ({ posts }) => {
           <input
             className={styles["search-input"]}
             type="text"
+            autoFocus
             placeholder="Search"
             onChange={(e) => changeSearch(e)}
             onKeyPress={(e) => {

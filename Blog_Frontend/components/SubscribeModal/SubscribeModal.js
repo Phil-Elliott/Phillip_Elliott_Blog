@@ -34,7 +34,6 @@ const SubscribeModal = ({ changeModalDisplay, displayModal }) => {
       tabIndex="-1"
       role="dialog"
       aria-labelledby="subscribeModalLabel"
-      aria-hidden="true"
       onClick={() => changeModalDisplay()}
     >
       <div
@@ -44,9 +43,9 @@ const SubscribeModal = ({ changeModalDisplay, displayModal }) => {
       >
         <div className={styles["modal-content"]}>
           <div className={styles["modal-header"]}>
-            <h5 className={styles["modal-title"]} id="subscribeModalLabel">
+            <p className={styles["modal-title"]} id="subscribeModalLabel">
               Subscribe to my newsletter
-            </h5>
+            </p>
             <button
               type="button"
               className={styles["modal-close-button"]}
@@ -54,7 +53,7 @@ const SubscribeModal = ({ changeModalDisplay, displayModal }) => {
               aria-label="Close"
               onClick={() => changeModalDisplay()}
             >
-              <span aria-hidden="true">&times;</span>
+              <span>&times;</span>
             </button>
           </div>
           <div className={styles["modal-body"]}>
@@ -76,25 +75,11 @@ const SubscribeModal = ({ changeModalDisplay, displayModal }) => {
                   I'll never share your email with anyone else.
                 </small>
               </div>
-              {/* <div className={styles["modal-form-check"]}>
-                <input
-                  type="checkbox"
-                  className={styles["modal-form-check-input"]}
-                  id="subscribeCheck"
-                />
-                <label
-                  className={styles["modal-form-check-label"]}
-                  htmlFor="subscribeCheck"
-                >
-                  Check me out
-                </label>
-              </div> */}
               <button
                 type="submit"
                 value=""
                 name="subscribe"
                 className={styles["modal-form-submit-button"]}
-                // onClick={() => changeModalDisplay()}
               >
                 Submit
               </button>
