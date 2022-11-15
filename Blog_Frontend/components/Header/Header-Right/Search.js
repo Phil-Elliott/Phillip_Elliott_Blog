@@ -6,7 +6,7 @@ import { FaSearch } from "react-icons/fa";
 const Search = () => {
   return (
     <>
-      <Link href="/search">
+      <Link href="/search" aria-label="Search">
         <FaSearch className={styles.searchIcon} />
       </Link>
     </>

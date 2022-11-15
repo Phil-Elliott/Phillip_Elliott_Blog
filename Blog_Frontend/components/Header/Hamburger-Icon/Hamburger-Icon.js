@@ -4,9 +4,7 @@ import styles from "./../../../styles/layout/Header/HamburgerIcon.module.scss";
 const HamburgerIcon = ({ setIsOpen, isOpen }) => {
   return (
     <div>
-      <button
-        name="responsive header toggle"
-        type="button"
+      <div
         className={`${styles["toggle-button"]} ${
           isOpen ? styles["toggle-button-open"] : ""
         }`}
@@ -15,7 +13,7 @@ const HamburgerIcon = ({ setIsOpen, isOpen }) => {
         <span className={styles.bar1}></span>
         <span className={styles.bar2}></span>
         <span className={styles.bar3}></span>
-      </button>
+      </div>
     </div>
   );
 };
