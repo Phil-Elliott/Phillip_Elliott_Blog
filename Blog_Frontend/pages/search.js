@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import ArticleContainer from "../components/Home/Popular/Article-Container/Article-Container";
+import Input from "../components/Search/Input";
 import { PageIndex } from "../components/Articles";
 import { Meta } from "../components/Meta";
 import { getClient } from "../lib/sanity.server";
 import groq from "groq";
-import { FaSearch } from "react-icons/fa";
 import styles from "./../styles/Pages/Search/search.module.scss";
 
 const search = ({ posts }) => {
@@ -18,15 +18,6 @@ const search = ({ posts }) => {
   const changeSearch = (search) => {
     setSearch(search.target.value);
   };
-
-  // search through posts
-  // useEffect(() => {
-  //   const filtered = posts.filter((post) => {
-  //     return post.title.toLowerCase().includes(search.toLowerCase());
-  //   });
-
-  //   setSearchedPosts(filtered);
-  // }, [search]);
 
   const searchAllPosts = () => {
     const filtered = posts.filter((post) => {
@@ -68,26 +59,13 @@ const search = ({ posts }) => {
         description="Find the content that you are looking for. Search through all of the articles on the site."
       />
       <h1 className={styles["main-articles-container-header"]}>Search</h1>
+
       <div className={styles["search-container"]}>
-        <div className={styles["input-container"]}>
-          <input
-            className={styles["search-input"]}
-            type="text"
-            autoFocus
-            placeholder="Search"
-            onChange={(e) => changeSearch(e)}
-            onKeyPress={(e) => {
-              if (e.key === "Enter") {
-                searchAllPosts();
-              }
-            }}
-            value={search}
-          />
-          <FaSearch
-            className={styles["search-icon"]}
-            onClick={() => searchAllPosts()}
-          />
-        </div>
+        <Input
+          changeSearch={changeSearch}
+          searchAllPosts={searchAllPosts}
+          search={search}
+        />
         <p className={styles["filter-container-article-count"]}>{display}</p>
       </div>
       <div className={styles["search-results"]}>
