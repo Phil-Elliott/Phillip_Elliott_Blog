@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PostComponents from "./PostComponents";
 import Image from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
@@ -9,15 +9,16 @@ import { PortableText } from "@portabletext/react";
 import styles from "./../../styles/Pages/Article/Content.module.scss";
 
 export const Content = ({ post }) => {
+  const [newDate, setNewDate] = useState("");
+
   const imageProps = post && useNextSanityImage(getClient(), post.mainImage);
   const authorImageProps =
     post && useNextSanityImage(getClient(), post.authorImage);
   const description = post && post.body[0].children[0].text;
 
-  let newDate = "";
-  if (post) {
-    newDate = moment(post.publishedAt).format("MM/DD/YYYY");
-  }
+  useEffect(() => {
+    setNewDate(moment(post.publishedAt).format("MM/DD/YYYY"));
+  }, []);
 
   return (
     <div className={styles["article-container"]}>
