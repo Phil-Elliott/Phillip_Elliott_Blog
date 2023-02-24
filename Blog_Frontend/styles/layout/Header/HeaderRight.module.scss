@@ -1,0 +1,36 @@
+@use "../../abstracts" as *;
+
+.header-right-container {
+  display: flex;
+  align-items: center;
+
+  button {
+    background-color: $primary;
+    border: none;
+    border-radius: $border-radius;
+    color: $secondary;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: $transistion-ease;
+    // box-shadow: $box-shadow-light;
+
+    &:hover {
+      cursor: pointer;
+
+      background-color: $secondary;
+      color: $primary;
+      // box-shadow: $box-shadow;
+    }
+  }
+  .searchIcon {
+    color: $primary;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+
+    &:hover {
+      color: white;
+    }
+  }
+}

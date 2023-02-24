@@ -1,0 +1,80 @@
+@use "../../abstracts" as *;
+
+.headerContainer {
+  background-color: #da564a;
+  // box-shadow: $box-shadow-light;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  transition: $transistion-ease;
+  // padding: 0.5rem 0;
+}
+
+.headerContentContainer {
+  background-color: #da564a;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  padding: 0.5rem 0;
+}
+
+.hiddenHeader {
+  transform: translateY(-100px);
+  transition: $transistion-ease;
+}
+
+.headerTopContentContainer {
+  color: $primary;
+  @extend %main-width;
+  @extend %flex-between;
+}
+
+.headerBottomContentContainer {
+  transition: $transistion-ease;
+  color: $secondary;
+  background-color: $primary;
+}
+
+.headerBottomContentContainerClosed {
+  margin-top: -4.25rem;
+  transition: $transistion-ease;
+}
+
+.headerResponsiveLinksContainer {
+  @extend %main-width;
+  // padding-block: 0.25rem;
+
+  ul {
+    padding-left: 0;
+  }
+
+  li {
+    margin: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .headerFullSizeNav {
+    display: none;
+  }
+  .headerTopContentContainer,
+  .headerResponsiveLinksContainer {
+    width: 90%;
+  }
+  .hiddenHeader {
+    transform: translateY(-200px);
+    transition: $transistion-ease;
+  }
+}
+
+@media only screen and (min-width: 1001px) {
+  .headerBottomContentContainer {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 1001px) {
+  .hamburgerIcon {
+    display: none;
+  }
+}

@@ -1,0 +1,40 @@
+@use "../../abstracts" as *;
+
+.header-nav-container {
+  ul {
+    @extend %flex-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      cursor: pointer;
+      padding: 1rem;
+      margin-inline: 0.5rem;
+      font-weight: 500;
+      color: white;
+
+      &:hover {
+        text-shadow: 0 0 0.015rem $primary;
+      }
+    }
+  }
+}
+
+.header-nav-link-active {
+  color: $tertiary;
+}
+
+@media only screen and (max-width: 1000px) {
+  .header-nav-container {
+    ul {
+      li {
+        color: $secondary;
+
+        &:hover {
+          color: $tertiary;
+        }
+      }
+    }
+  }
+}

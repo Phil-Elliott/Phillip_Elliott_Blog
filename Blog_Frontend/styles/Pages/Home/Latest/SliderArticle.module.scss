@@ -1,0 +1,154 @@
+@use "../../../abstracts" as *;
+
+.home-latest-article {
+  cursor: pointer;
+  position: relative;
+  transition: $transistion-ease;
+
+  .home-latest-article-image {
+    height: clamp(25rem, 20vw, 25vw);
+    position: relative;
+
+    img {
+      object-fit: cover;
+      border-radius: 3px;
+    }
+  }
+}
+
+.image-content-container {
+  position: relative;
+  border-radius: $border-radius;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  opacity: 0.85;
+  line-height: 150%;
+  color: white;
+  transition: all 1s ease-in-out;
+  overflow: hidden;
+
+  h2 {
+    background-color: black;
+    font-size: clamp(1.15rem, 1.25vw, 1.25vw);
+    margin: 0;
+    line-height: 150%;
+    padding: 1rem;
+    text-align: center;
+    transition: $transistion-ease;
+    width: 100%;
+    opacity: 0;
+  }
+
+  p {
+    font-size: clamp(1rem, 1vw, 1vw);
+    line-height: 150%;
+    padding: 0 1rem;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.15s ease-in-out;
+    opacity: 0;
+    margin-block: auto;
+  }
+  button {
+    background-color: black;
+    border: none;
+    border-radius: $border-radius;
+    color: $primary;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 2rem;
+    transition: $transistion-ease;
+    margin-inline: auto;
+    margin-top: 1rem;
+    // overflow: hidden;
+    position: relative;
+    opacity: 0;
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  .home-latest-article {
+    &:hover {
+      box-shadow: $box-shadow;
+      transition: $transistion-ease;
+      scale: 1.01;
+    }
+  }
+
+  .image-content-container {
+    &:hover {
+      background-color: $tertiary;
+      padding-block: 2rem;
+      transition: $transistion-ease;
+
+      h2 {
+        opacity: 1;
+        position: relative;
+        transition: $transistion-ease;
+      }
+      p {
+        opacity: 1;
+        transition: all 1s ease-in-out;
+      }
+      button {
+        opacity: 1;
+        transition: $transistion-ease;
+
+        &:hover {
+          cursor: pointer;
+          box-shadow: $box-shadow;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .home-latest-article {
+    padding-bottom: 2rem;
+  }
+  .image-content-container {
+    h2 {
+      opacity: 1;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+  .home-latest-article-image {
+    box-shadow: $box-shadow;
+  }
+}
+
+/*
+  go back to have the title and elipsis at the bottom of the image
+  have everything else happen on hover
+
+
+  could have everything slide up on hover
+  have color change 
+  have image scale in a little bit
+
+
+
+
+
+  try using grid 
+  and use order to change the header to the top 
+  could have the other elements display
+
+
+  could also have two title components 
+  bottom one dissapears on hover
+  top one appears on hover and translates in and out 
+  wont leave the box because of the overflow hidden
+
+
+
+  only have change at 650 
+  show title at bottom or full hover effect 
+
+*/
