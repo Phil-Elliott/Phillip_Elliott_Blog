@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
@@ -7,9 +7,13 @@ import moment from "moment";
 import styles from "./../../../styles/Pages/Article/Popular.module.scss";
 
 const ArticleLink = ({ post, index }) => {
+  const [newDate, setNewDate] = useState("");
+
   const imageProps = useNextSanityImage(getClient(), post.mainImage);
 
-  const newDate = moment(post.publishedAt).format("MM/DD/YYYY");
+  useEffect(() => {
+    setNewDate(moment(post.publishedAt).format("MM/DD/YYYY"));
+  }, []);
 
   return (
     <Link href={`/posts/${post.slug.current}`}>

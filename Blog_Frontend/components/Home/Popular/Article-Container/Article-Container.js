@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
@@ -20,6 +20,8 @@ const ArticleContainer = ({
   publishedAt,
   categories,
 }) => {
+  const [newDate, setNewDate] = useState("");
+
   const imageProps = useNextSanityImage(getClient(), image);
   const authorImageProps = useNextSanityImage(getClient(), authorImage);
 
@@ -29,7 +31,9 @@ const ArticleContainer = ({
       ? newDescription.slice(0, 190) + "..."
       : newDescription;
 
-  const newDate = moment(publishedAt).format("MM/DD/YYYY");
+  useEffect(() => {
+    setNewDate(moment(post.publishedAt).format("MM/DD/YYYY"));
+  }, []);
 
   return (
     <Link
