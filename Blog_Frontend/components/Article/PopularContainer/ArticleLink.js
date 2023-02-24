@@ -30,7 +30,7 @@ const ArticleLink = ({ post, index }) => {
         </div>
         <div className={styles["info-container"]}>
           <h3>{post.title}</h3>
-          <Moment format="MM/DD/YYYY">{post.publishedAt}</Moment>
+          {/* <Moment format="MM/DD/YYYY">{post.publishedAt}</Moment> */}
         </div>
       </div>
     </Link>

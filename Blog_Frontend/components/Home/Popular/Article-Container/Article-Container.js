@@ -62,7 +62,7 @@ const ArticleContainer = ({
               />
             </div>
             <h2 style={{ color: "rgba(26, 28, 26, 0.9)" }}>
-              Phil Elliott | <Moment format="MM/DD/YYYY">{publishedAt}</Moment>
+              {/* Phil Elliott | <Moment format="MM/DD/YYYY">{publishedAt}</Moment> */}
             </h2>
           </div>
         </div>

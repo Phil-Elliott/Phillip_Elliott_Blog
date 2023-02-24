@@ -26,7 +26,7 @@ export const Content = ({ post }) => {
             </div>
             <h3 style={{ color: "rgba(26, 28, 26, 0.9)" }}>
               Phil Elliott |{" "}
-              <Moment format="MM/DD/YYYY">{post.publishedAt}</Moment>
+              {/* <Moment format="MM/DD/YYYY">{post.publishedAt}</Moment> */}
             </h3>
           </div>
           <div className={styles["main-img"]}>
