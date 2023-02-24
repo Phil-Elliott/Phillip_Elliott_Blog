@@ -27,9 +27,10 @@ const HeaderNav = () => {
       <ul>
         {NavLinks.map((link) => {
           return (
-            <li key={link.name}>
-              <Link href={link.path}>{link.name}</Link>
-            </li>
+            <Link href={link.path} className={styles.path}>
+              {link.name}
+              <li key={link.name}></li>
+            </Link>
           );
         })}
       </ul>
