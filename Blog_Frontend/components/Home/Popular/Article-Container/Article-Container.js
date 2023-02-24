@@ -32,8 +32,8 @@ const ArticleContainer = ({
       : newDescription;
 
   useEffect(() => {
-    setNewDate(moment(post.publishedAt).format("MM/DD/YYYY"));
-  }, []);
+    setNewDate(moment(publishedAt).format("MM/DD/YYYY"));
+  }, [publishedAt]);
 
   return (
     <Link

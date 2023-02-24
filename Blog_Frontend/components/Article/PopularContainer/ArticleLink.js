@@ -13,7 +13,7 @@ const ArticleLink = ({ post, index }) => {
 
   useEffect(() => {
     setNewDate(moment(post.publishedAt).format("MM/DD/YYYY"));
-  }, []);
+  }, [post]);
 
   return (
     <Link href={`/posts/${post.slug.current}`}>

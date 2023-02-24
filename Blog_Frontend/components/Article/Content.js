@@ -18,7 +18,7 @@ export const Content = ({ post }) => {
 
   useEffect(() => {
     setNewDate(moment(post.publishedAt).format("MM/DD/YYYY"));
-  }, []);
+  }, [post]);
 
   return (
     <div className={styles["article-container"]}>
