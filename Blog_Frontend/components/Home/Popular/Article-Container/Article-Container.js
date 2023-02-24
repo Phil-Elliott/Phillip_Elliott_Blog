@@ -23,8 +23,7 @@ const ArticleContainer = ({
   const imageProps = useNextSanityImage(getClient(), image);
   const authorImageProps = useNextSanityImage(getClient(), authorImage);
 
-  // const newDescription = description[0].children[0].text;
-  const newDescription = "description";
+  const newDescription = description[0].children[0].text;
   const shortDescription =
     newDescription.length > 190
       ? newDescription.slice(0, 190) + "..."
