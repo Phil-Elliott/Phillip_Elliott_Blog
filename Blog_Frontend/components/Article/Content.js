@@ -14,7 +14,10 @@ export const Content = ({ post }) => {
     post && useNextSanityImage(getClient(), post.authorImage);
   const description = post && post.body[0].children[0].text;
 
-  const newDate = moment(post.publishedAt).format("MM/DD/YYYY");
+  let newDate = "";
+  if (post) {
+    newDate = moment(post.publishedAt).format("MM/DD/YYYY");
+  }
 
   return (
     <div className={styles["article-container"]}>
