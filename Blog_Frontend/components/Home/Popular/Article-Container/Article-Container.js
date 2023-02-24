@@ -6,7 +6,7 @@ import { getClient } from "../../../../lib/sanity.server";
 import { urlFor } from "../../../../lib/sanity";
 import { PortableText } from "@portabletext/react";
 import styles from "./../../../../styles/Pages/Home/Popular/ArticleContainer.module.scss";
-import Moment from "react-moment";
+import moment from "moment";
 
 const ArticleContainer = ({
   title,
@@ -28,6 +28,8 @@ const ArticleContainer = ({
     newDescription.length > 190
       ? newDescription.slice(0, 190) + "..."
       : newDescription;
+
+  const newDate = moment(publishedAt).format("MM/DD/YYYY");
 
   return (
     <Link
@@ -62,7 +64,7 @@ const ArticleContainer = ({
               />
             </div>
             <h2 style={{ color: "rgba(26, 28, 26, 0.9)" }}>
-              {/* Phil Elliott | <Moment format="MM/DD/YYYY">{publishedAt}</Moment> */}
+              Phil Elliott | <span>{newDate}</span>
             </h2>
           </div>
         </div>

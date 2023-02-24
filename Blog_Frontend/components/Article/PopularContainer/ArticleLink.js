@@ -3,11 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
 import { getClient } from "../../../lib/sanity.server";
-import Moment from "react-moment";
+import moment from "moment";
 import styles from "./../../../styles/Pages/Article/Popular.module.scss";
 
 const ArticleLink = ({ post, index }) => {
   const imageProps = useNextSanityImage(getClient(), post.mainImage);
+
+  const newDate = moment(post.publishedAt).format("MM/DD/YYYY");
+
   return (
     <Link href={`/posts/${post.slug.current}`}>
       <div
@@ -30,7 +33,7 @@ const ArticleLink = ({ post, index }) => {
         </div>
         <div className={styles["info-container"]}>
           <h3>{post.title}</h3>
-          {/* <Moment format="MM/DD/YYYY">{post.publishedAt}</Moment> */}
+          <p>{newDate}</p>
         </div>
       </div>
     </Link>

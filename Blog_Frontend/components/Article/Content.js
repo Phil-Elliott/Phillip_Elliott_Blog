@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
 import { getClient } from "../../lib/sanity.server";
 import { Meta } from "../../components/Meta";
-import Moment from "react-moment";
+import moment from "moment";
 import { PortableText } from "@portabletext/react";
 import styles from "./../../styles/Pages/Article/Content.module.scss";
 
@@ -13,6 +13,8 @@ export const Content = ({ post }) => {
   const authorImageProps =
     post && useNextSanityImage(getClient(), post.authorImage);
   const description = post && post.body[0].children[0].text;
+
+  const newDate = moment(post.publishedAt).format("MM/DD/YYYY");
 
   return (
     <div className={styles["article-container"]}>
@@ -25,8 +27,7 @@ export const Content = ({ post }) => {
               <Image {...authorImageProps} alt="Author Image" />
             </div>
             <h3 style={{ color: "rgba(26, 28, 26, 0.9)" }}>
-              Phil Elliott |{" "}
-              {/* <Moment format="MM/DD/YYYY">{post.publishedAt}</Moment> */}
+              Phil Elliott | <span>{newDate}</span>
             </h3>
           </div>
           <div className={styles["main-img"]}>
