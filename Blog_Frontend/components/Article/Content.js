@@ -9,10 +9,10 @@ import { PortableText } from "@portabletext/react";
 import styles from "./../../styles/Pages/Article/Content.module.scss";
 
 export const Content = ({ post }) => {
-  const imageProps = post && useNextSanityImage(getClient(), post.mainImage);
-  const authorImageProps =
-    post && useNextSanityImage(getClient(), post.authorImage);
-  const description = post && post.body[0].children[0].text;
+  // const imageProps = post && useNextSanityImage(getClient(), post.mainImage);
+  // const authorImageProps =
+  //   post && useNextSanityImage(getClient(), post.authorImage);
+  // const description = post && post.body[0].children[0].text;
 
   return (
     <div className={styles["article-container"]}>

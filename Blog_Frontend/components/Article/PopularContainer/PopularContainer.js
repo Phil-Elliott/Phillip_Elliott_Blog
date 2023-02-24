@@ -3,8 +3,8 @@ import ArticleLink from "./ArticleLink";
 import styles from "./../../../styles/Pages/Article/Popular.module.scss";
 
 const PopularContainer = ({ posts, currentTitle }) => {
-  let recentPosts =
-    currentTitle && posts.filter((post) => post.title !== currentTitle);
+  // let recentPosts =
+  //   currentTitle && posts.filter((post) => post.title !== currentTitle);
   return (
     <div className={styles["popular-container"]}>
       <div className={styles["popular-articles-container"]}>
