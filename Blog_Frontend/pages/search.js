@@ -13,6 +13,7 @@ const search = ({ posts }) => {
   const [count, setCount] = useState(searchedPosts.length);
   const [pageCount, setPageCount] = useState(1);
   const [pageNumber, setPageNumber] = useState(1);
+  const [display, setDisplay] = useState("");
 
   // stores the search input
   const changeSearch = (search) => {
@@ -28,7 +29,10 @@ const search = ({ posts }) => {
   };
 
   // Count of the articles displayed
-  const display = count > 1 ? `${count} Articles` : `${count} Article`;
+  useEffect(() => {
+    const display = count > 1 ? `${count} Articles` : `${count} Article`;
+    setDisplay(display);
+  }, [count]);
 
   useEffect(() => {
     setCount(searchedPosts.length);

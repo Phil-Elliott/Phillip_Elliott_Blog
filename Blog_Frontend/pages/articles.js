@@ -14,6 +14,7 @@ const ArticlesContainer = (posts) => {
   const [count, setCount] = useState(posts.posts.length);
   const [pageCount, setPageCount] = useState(1);
   const [pageNumber, setPageNumber] = useState(1);
+  const [display, setDisplay] = useState("");
 
   // get all categories
   useEffect(() => {
@@ -43,7 +44,10 @@ const ArticlesContainer = (posts) => {
   };
 
   // Count of the articles displayed
-  const display = count > 1 ? `${count} Articles` : `${count} Article`;
+  useEffect(() => {
+    const display = count > 1 ? `${count} Articles` : `${count} Article`;
+    setDisplay(display);
+  }, [count]);
 
   useEffect(() => {
     setCount(filteredPosts.length);

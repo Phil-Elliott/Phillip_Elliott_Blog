@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import ArticleLink from "./ArticleLink";
 import styles from "./../../../styles/Pages/Article/Popular.module.scss";
 
@@ -27,6 +27,15 @@ const PopularContainer = ({ posts, currentTitle }) => {
 export default PopularContainer;
 
 /*
+
+
+
+
+
+
+
+
+
  Add a line next to recent posts 
  Maybe make a little smaller 
  no border on bottom of last element

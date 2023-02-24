@@ -65,7 +65,7 @@ export default MyApp;
 
 /*
 
-  2) Have something happen while page is loading
+  Need to fix the popularContainer scrolling down the page
 
 
 
