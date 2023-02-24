@@ -46,6 +46,7 @@ const Featured = (post) => {
               (max-width: 1200px) 50vw,
               33vw"
               loading="eager"
+              priority
             />
           </div>
         </div>

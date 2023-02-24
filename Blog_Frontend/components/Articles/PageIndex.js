@@ -18,7 +18,7 @@ const PageIndex = ({ changePage, pageCount, pageNumber }) => {
             {Array.from(Array(pageCount).keys()).map((number) => {
               return (
                 <div
-                  style={number + 1 === pageNumber ? { color: "#d05a49" } : {}}
+                  style={number + 1 === pageNumber ? { color: "#007A5C" } : {}}
                   className={styles["articles-numberLine-number"]}
                   onClick={() => changePage(number + 1)}
                   key={number + 1}

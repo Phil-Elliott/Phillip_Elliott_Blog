@@ -67,7 +67,7 @@ const ArticleContainer = ({
               33vw"
               />
             </div>
-            <h2 style={{ color: "rgba(26, 28, 26, 0.9)" }}>
+            <h2>
               Phil Elliott | <span>{newDate}</span>
             </h2>
           </div>

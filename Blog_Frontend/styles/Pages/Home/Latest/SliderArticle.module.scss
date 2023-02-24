@@ -31,7 +31,7 @@
   overflow: hidden;
 
   h2 {
-    background-color: black;
+    background-color: #007a5c;
     font-size: clamp(1.15rem, 1.25vw, 1.25vw);
     margin: 0;
     line-height: 150%;
@@ -54,7 +54,7 @@
     margin-block: auto;
   }
   button {
-    background-color: black;
+    background-color: #007a5c;
     border: none;
     border-radius: $border-radius;
     color: $primary;
