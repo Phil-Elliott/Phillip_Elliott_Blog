@@ -12,12 +12,12 @@ const PopularContainer = ({ posts, currentTitle }) => {
           <h2>Recent Posts</h2>
         </div>
         <div className={styles["popular-articles"]}>
-          {recentPosts &&
+          {/* {recentPosts &&
             recentPosts.map((post, index) => {
               if (index < 5) {
                 return <ArticleLink key={post._id} post={post} index={index} />;
               }
-            })}
+            })} */}
         </div>
       </div>
     </div>
